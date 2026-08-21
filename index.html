@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace Dz</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: #f5f6f8;
+      color: #222;
+      min-height: 100vh;
+    }
+
+    button {
+      cursor: pointer;
+      border: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 430px;
+      margin: auto;
+      padding: 25px 18px;
+    }
+
+    /* =========================
+       HOME
+    ========================= */
+
+    .home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 38px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      color: #777;
+      margin-bottom: 35px;
+    }
+
+    .main-btn {
+      width: 100%;
+      padding: 15px;
+      margin: 7px 0;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      background: #111;
+      color: white;
+    }
+
+    .main-btn.secondary {
+      background: white;
+      color: #111;
+      border: 1px solid #ddd;
+    }
+
+    /* =========================
+       STATS
+    ========================= */
+
+    .stats {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 35px;
+      gap: 10px;
+    }
+
+    .stat {
+      flex: 1;
+      background: white;
+      padding: 15px 5px;
+      border-radius: 12px;
+      box-shadow: 0 3px 12px rgba(0,0,0,.06);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 19px;
+      margin-bottom: 5px;
+    }
+
+    .stat span {
+      font-size: 11px;
+      color: #777;
+    }
+
+    /* =========================
+       PAGES
+    ========================= */
+
+    .page {
+      display: none;
+      min-height: 100vh;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 25px;
+    }
+
+    .back {
+      background: white;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      font-size: 20px;
+    }
+
+    .header h2 {
+      font-size: 23px;
+    }
+
+    /* =========================
+       FORMS
+    ========================= */
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: white;
+      outline: none;
+      font-size: 15px;
+    }
+
+    input:focus,
+    select:focus {
+      border-color: #111;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 15px;
+      background: #111;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 5px;
+    }
+
+    .message {
+      margin-top: 15px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    .link {
+      text-align: center;
+      margin-top: 18px;
+      color: #555;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    /* =========================
+       ACCOUNT TYPE
+    ========================= */
+
+    .account-card {
+      background: white;
+      padding: 22px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      border: 1px solid #eee;
+      cursor: pointer;
+    }
+
+    .account-card .icon {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .account-card h3 {
+      margin-bottom: 7px;
+    }
+
+    .account-card p {
+      color: #777;
+      font-size: 13px;
+    }
+
+    /* =========================
+       DASHBOARD
+    ========================= */
+
+    .dashboard-title {
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+
+    .welcome {
+      color: #777;
+      margin-bottom: 25px;
+    }
+
+    .dashboard-card {
+      background: white;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 15px;
+      border: 1px solid #eee;
+    }
+
+    .dashboard-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .dashboard-card p {
+      color: #777;
+      font-size: 14px;
+    }
+
+    .logout {
+      background: #e74c3c;
+      color: white;
+      width: 100%;
+      padding: 14px;
+      border-radius: 10px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       HOME PAGE
+  ========================= -->
+
+  <section id="homePage" class="page active">
+    <div class="container home">
+
+      <div class="logo">Marketplace Dz</div>
+
+      <p class="subtitle">
+        Algeria's online marketplace
+      </p>
+
+      <button class="main-btn" onclick="showPage('accountTypePage')">
+        Create New Account
+      </button>
+
+      <button class="main-btn secondary" onclick="showPage('loginPage')">
+        Login
+      </button>
+
+      <div class="stats">
+
+        <div class="stat">
+          <strong>10K+</strong>
+          <span>Users</span>
+        </div>
+
+        <div class="stat">
+          <strong>25K+</strong>
+          <span>Downloads</span>
+        </div>
+
+        <div class="stat">
+          <strong>5K+</strong>
+          <span>Products</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       ACCOUNT TYPE
+  ========================= -->
+
+  <section id="accountTypePage" class="page">
+    <div class="container">
+
+      <div class="header">
+        <button class="back" onclick="showPage('homePage')">←</button>
+        <h2>Create Account</h2>
+      </div>
+
+      <div
+        class="account-card"
+        onclick="selectAccountType('seller')"
+      >
+        <div class="icon">🏪</div>
+        <h3>Seller</h3>
+        <p>
+          Sell your products and manage your orders.
+        </p>
+      </div>
+
+      <div
+        class="account-card"
+        onclick="selectAccountType('buyer')"
+      >
+        <div class="icon">🛒</div>
+        <h3>Buyer</h3>
+        <p>
+          Discover products and place orders.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       SIGNUP PAGE
+  ========================= -->
+
+  <section id="signupPage" class="page">
+    <div class="container">
+
+      <div class="header">
+        <button class="back" onclick="showPage('accountTypePage')">
+          ←
+        </button>
+
+        <h2 id="signupTitle">
+          Create Account
+        </h2>
+      </div>
+
+      <form id="signupForm">
+
+        <div class="form-group">
+          <label>Full Name</label>
+          <input
+            type="text"
+            id="signupName"
+            placeholder="Enter your full name"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Username</label>
+          <input
+            type="text"
+            id="signupUsername"
+            placeholder="Choose a username"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            type="email"
+            id="signupEmail"
+            placeholder="Enter your email"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Create a password"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            id="signupConfirmPassword"
+            placeholder="Confirm your password"
+            required
+          >
+        </div>
+
+        <button class="submit-btn" type="submit">
+          Create Account
+        </button>
+
+        <div id="signupMessage" class="message"></div>
+
+      </form>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       LOGIN PAGE
+  ========================= -->
+
+  <section id="loginPage" class="page">
+    <div class="container">
+
+      <div class="header">
+        <button class="back" onclick="showPage('homePage')">
+          ←
+        </button>
+
+        <h2>Login</h2>
+      </div>
+
+      <form id="loginForm">
+
+        <div class="form-group">
+          <label>Email or Username</label>
+
+          <input
+            type="text"
+            id="loginIdentifier"
+            placeholder="Email or username"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label>Password</label>
+
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Your password"
+            required
+          >
+        </div>
+
+        <button class="submit-btn" type="submit">
+          Login
+        </button>
+
+        <div id="loginMessage" class="message"></div>
+
+      </form>
+
+      <div
+        class="link"
+        onclick="showPage('accountTypePage')"
+      >
+        Don't have an account? Create one
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       SELLER DASHBOARD
+  ========================= -->
+
+  <section id="sellerPage" class="page">
+    <div class="container">
+
+      <h1 class="dashboard-title">
+        Seller Dashboard
+      </h1>
+
+      <p class="welcome" id="sellerWelcome"></p>
+
+      <div class="dashboard-card">
+        <h3>📦 Products</h3>
+        <p>
+          Add and manage your products.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>🛍️ Orders</h3>
+        <p>
+          Monitor your orders and returns.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>💰 Earnings</h3>
+        <p>
+          Daily and monthly earnings.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>⚙️ Settings</h3>
+        <p>
+          Payment methods, delivery prices and account settings.
+        </p>
+      </div>
+
+      <button class="logout" onclick="logout()">
+        Logout
+      </button>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       BUYER DASHBOARD
+  ========================= -->
+
+  <section id="buyerPage" class="page">
+    <div class="container">
+
+      <h1 class="dashboard-title">
+        Marketplace Dz
+      </h1>
+
+      <p class="welcome" id="buyerWelcome"></p>
+
+      <div class="dashboard-card">
+        <h3>🏠 Home</h3>
+        <p>
+          Discover the latest products.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>❤️ Favorites</h3>
+        <p>
+          Products you saved.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>📂 Categories</h3>
+        <p>
+          Explore all product categories.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>🛒 Cart</h3>
+        <p>
+          Your selected products.
+        </p>
+      </div>
+
+      <div class="dashboard-card">
+        <h3>☰ More</h3>
+        <p>
+          Profile, orders, delivery prices, help and settings.
+        </p>
+      </div>
+
+      <button class="logout" onclick="logout()">
+        Logout
+      </button>
+
+    </div>
+  </section>
+
+
+  <script>
+
+    /* =========================
+       VARIABLES
+    ========================= */
+
+    let selectedAccountType = "";
+
+
+    /* =========================
+       PAGE NAVIGATION
+    ========================= */
+
+    function showPage(pageId) {
+
+      const pages = document.querySelectorAll(".page");
+
+      pages.forEach(page => {
+        page.classList.remove("active");
+      });
+
+      document.getElementById(pageId)
+        .classList.add("active");
+
+      window.scrollTo(0, 0);
+    }
+
+
+    /* =========================
+       ACCOUNT TYPE
+    ========================= */
+
+    function selectAccountType(type) {
+
+      selectedAccountType = type;
+
+      if (type === "seller") {
+
+        document.getElementById("signupTitle")
+          .textContent = "Create Seller Account";
+
+      } else {
+
+        document.getElementById("signupTitle")
+          .textContent = "Create Buyer Account";
+      }
+
+      showPage("signupPage");
+    }
+
+
+    /* =========================
+       SIGNUP
+    ========================= */
+
+    document
+      .getElementById("signupForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+        const name =
+          document.getElementById("signupName")
+            .value.trim();
+
+        const username =
+          document.getElementById("signupUsername")
+            .value.trim();
+
+        const email =
+          document.getElementById("signupEmail")
+            .value.trim();
+
+        const password =
+          document.getElementById("signupPassword")
+            .value;
+
+        const confirmPassword =
+          document.getElementById("signupConfirmPassword")
+            .value;
+
+        const message =
+          document.getElementById("signupMessage");
+
+
+        if (password !== confirmPassword) {
+
+          message.textContent =
+            "Passwords do not match.";
+
+          message.style.color = "red";
+
+          return;
+        }
+
+
+        if (password.length < 6) {
+
+          message.textContent =
+            "Password must contain at least 6 characters.";
+
+          message.style.color = "red";
+
+          return;
+        }
+
+
+        const existingUsers =
+          JSON.parse(
+            localStorage.getItem("marketplaceUsers") || "[]"
+          );
+
+
+        const usernameExists =
+          existingUsers.some(
+            user =>
+              user.username.toLowerCase() ===
+              username.toLowerCase()
+          );
+
+
+        const emailExists =
+          existingUsers.some(
+            user =>
+              user.email.toLowerCase() ===
+              email.toLowerCase()
+          );
+
+
+        if (usernameExists) {
+
+          message.textContent =
+            "Username already exists.";
+
+          message.style.color = "red";
+
+          return;
+        }
+
+
+        if (emailExists) {
+
+          message.textContent =
+            "Email already exists.";
+
+          message.style.color = "red";
+
+          return;
+        }
+
+
+        const newUser = {
+
+          id: Date.now(),
+
+          name: name,
+
+          username: username,
+
+          email: email,
+
+          password: password,
+
+          type: selectedAccountType
+
+        };
+
+
+        existingUsers.push(newUser);
+
+
+        localStorage.setItem(
+          "marketplaceUsers",
+          JSON.stringify(existingUsers)
+        );
+
+
+        message.textContent =
+          "Account created successfully!";
+
+        message.style.color = "green";
+
+
+        setTimeout(() => {
+
+          document
+            .getElementById("signupForm")
+            .reset();
+
+          showPage("loginPage");
+
+        }, 1000);
+
+      });
+
+
+    /* =========================
+       LOGIN
+    ========================= */
+
+    document
+      .getElementById("loginForm")
+      .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const identifier =
+          document
+            .getElementById("loginIdentifier")
+            .value.trim();
+
+        const password =
+          document
+            .getElementById("loginPassword")
+            .value;
+
+
+        const message =
+          document.getElementById("loginMessage");
+
+
+        const users =
+          JSON.parse(
+            localStorage.getItem("marketplaceUsers") || "[]"
+          );
+
+
+        const user =
+          users.find(u =>
+
+            (
+              u.email.toLowerCase() ===
+              identifier.toLowerCase()
+
+            ||
+
+              u.username.toLowerCase() ===
+              identifier.toLowerCase()
+
+            )
+
+            &&
+
+            u.password === password
+
+          );
+
+
+        if (!user) {
+
+          message.textContent =
+            "Invalid username/email or password.";
+
+          message.style.color = "red";
+
+          return;
+        }
+
+
+        localStorage.setItem(
+          "marketplaceCurrentUser",
+          JSON.stringify(user)
+        );
+
+
+        message.textContent =
+          "Login successful!";
+
+        message.style.color = "green";
+
+
+        setTimeout(() => {
+
+          if (user.type === "seller") {
+
+            document
+              .getElementById("sellerWelcome")
+              .textContent =
+              "Welcome, " + user.name;
+
+            showPage("sellerPage");
+
+          } else {
+
+            document
+              .getElementById("buyerWelcome")
+              .textContent =
+              "Welcome, " + user.name;
+
+            showPage("buyerPage");
+          }
+
+        }, 500);
+
+      });
+
+
+    /* =========================
+       LOGOUT
+    ========================= */
+
+    function logout() {
+
+      localStorage.removeItem(
+        "marketplaceCurrentUser"
+      );
+
+      document
+        .getElementById("loginForm")
+        .reset();
+
+      showPage("homePage");
+    }
+
+
+    /* =========================
+       AUTO LOGIN
+    ========================= */
+
+    window.addEventListener("load", function() {
+
+      const currentUser =
+        JSON.parse(
+          localStorage.getItem(
+            "marketplaceCurrentUser"
+          )
+        );
+
+
+      if (!currentUser) return;
+
+
+      if (currentUser.type === "seller") {
+
+        document
+          .getElementById("sellerWelcome")
+          .textContent =
+          "Welcome back, " + currentUser.name;
+
+        showPage("sellerPage");
+
+      } else {
+
+        document
+          .getElementById("buyerWelcome")
+          .textContent =
+          "Welcome back, " + currentUser.name;
+
+        showPage("buyerPage");
+      }
+
+    });
+
+  </script>
+
+</body>
+          </html>
