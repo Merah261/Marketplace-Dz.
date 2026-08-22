@@ -1,150 +1,284 @@
 /* =========================================
    MARKETPLACE DZ
-   MAIN DESIGN
+   LANDING PAGE
 ========================================= */
 
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 :root {
   --black: #111111;
+  --dark: #1b1b1b;
   --white: #ffffff;
-  --background: #f5f6f8;
-  --border: #e5e5e5;
-  --text: #181818;
+  --background: #f7f7f5;
   --muted: #777777;
-  --danger: #d62828;
+  --border: #e6e6e3;
 }
 
 html,
 body {
+  width: 100%;
   min-height: 100%;
 }
 
 body {
-  min-height: 100vh;
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+
   background: var(--background);
-  color: var(--text);
-}
 
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
+  color: var(--black);
 
-button {
-  cursor: pointer;
-}
-
-.page {
-  display: none;
-  min-height: 100vh;
-}
-
-.page.active {
-  display: block;
-}
-
-.container {
-  width: 100%;
-  max-width: 450px;
-  margin: auto;
-  padding: 22px 18px;
+  -webkit-font-smoothing: antialiased;
 }
 
 
 /* =========================================
-   HOME
+   LANDING PAGE
 ========================================= */
 
-#homePage {
-  background:
-    radial-gradient(
-      circle at 90% 5%,
-      rgba(0, 0, 0, 0.06),
-      transparent 35%
-    ),
-    linear-gradient(
-      145deg,
-      #ffffff,
-      #f3f4f6
-    );
-}
-
-.home {
+.landing-page {
   min-height: 100vh;
 
+  background:
+    radial-gradient(
+      circle at 90% 0%,
+      rgba(0, 0, 0, 0.06),
+      transparent 30%
+    ),
+    radial-gradient(
+      circle at 0% 100%,
+      rgba(0, 0, 0, 0.035),
+      transparent 30%
+    ),
+    var(--background);
+
   display: flex;
+
+  justify-content: center;
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.landing-container {
+  width: 100%;
+
+  max-width: 480px;
+
+  min-height: 100vh;
+
+  padding:
+    30px
+    22px
+    22px;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================
+   BRAND
+========================================= */
+
+.brand-area {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.brand-mark {
+  width: 42px;
+
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  border-radius: 12px;
+
+  font-size: 18px;
+
+  font-weight: 800;
+
+  margin-bottom: 13px;
+}
+
+.brand-name {
+  font-size: 21px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.7px;
+}
+
+.brand-name span {
+  color: #777777;
+}
+
+.brand-description {
+  margin-top: 5px;
+
+  font-size: 12px;
+
+  color: var(--muted);
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+  flex: 1;
+
+  display: flex;
+
   flex-direction: column;
 
   justify-content: center;
-  align-items: center;
 
-  text-align: center;
+  padding:
+    50px
+    0
+    35px;
 }
 
-.brand h1 {
-  font-size: 38px;
-  font-weight: 800;
-  letter-spacing: -1.5px;
-}
+.hero-label {
+  display: inline-flex;
 
-.brand-line {
-  width: 50px;
-  height: 4px;
+  width: fit-content;
 
-  margin: 12px auto 0;
+  padding:
+    7px
+    11px;
 
-  background: var(--black);
-  border-radius: 10px;
-}
+  border:
+    1px
+    solid
+    var(--border);
 
-.subtitle {
-  margin-top: 14px;
-  margin-bottom: 38px;
+  border-radius: 20px;
 
-  color: var(--muted);
-  font-size: 14px;
-}
+  background:
+    rgba(255,255,255,0.7);
 
-.home-buttons {
-  width: 100%;
-}
+  color: #666666;
 
-.main-btn {
-  width: 100%;
-  height: 54px;
+  font-size: 9px;
 
-  border: none;
-  border-radius: 13px;
-
-  background: var(--black);
-  color: var(--white);
-
-  font-size: 15px;
   font-weight: 700;
 
-  margin-bottom: 12px;
+  letter-spacing: 1.2px;
 
-  transition: 0.2s;
+  margin-bottom: 19px;
 }
 
-.main-btn:hover {
-  transform: translateY(-2px);
-  opacity: 0.92;
+.hero h1 {
+  font-size: 39px;
+
+  line-height: 1.08;
+
+  letter-spacing: -1.8px;
+
+  font-weight: 800;
+
+  max-width: 430px;
 }
 
-.main-btn.secondary {
+.hero-text {
+  margin-top: 18px;
+
+  max-width: 390px;
+
+  color: var(--muted);
+
+  font-size: 14px;
+
+  line-height: 1.65;
+}
+
+
+/* =========================================
+   ACTION BUTTONS
+========================================= */
+
+.action-area {
+  margin-top: 30px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 10px;
+}
+
+.primary-button,
+.secondary-button {
+  width: 100%;
+
+  height: 55px;
+
+  border-radius: 14px;
+
+  font-size: 14px;
+
+  font-weight: 700;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.primary-button {
+  border: none;
+
+  background: var(--black);
+
+  color: var(--white);
+
+  box-shadow:
+    0 8px 20px
+    rgba(0,0,0,0.12);
+}
+
+.secondary-button {
+  border:
+    1px
+    solid
+    var(--border);
+
   background: var(--white);
-  color: var(--black);
 
-  border: 1px solid var(--border);
+  color: var(--black);
+}
+
+.primary-button:hover,
+.secondary-button:hover {
+  transform: translateY(-2px);
+}
+
+.primary-button:active,
+.secondary-button:active {
+  transform: translateY(0);
 }
 
 
@@ -152,116 +286,146 @@ button {
    STATISTICS
 ========================================= */
 
-.stats {
-  width: 100%;
-
+.statistics {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+
+  grid-template-columns:
+    repeat(3, 1fr);
 
   gap: 9px;
-
-  margin-top: 25px;
 }
 
-.stat {
-  background: rgba(255,255,255,0.9);
+.stat-card {
+  min-height: 78px;
 
-  border: 1px solid var(--border);
-
-  border-radius: 14px;
-
-  padding: 15px 5px;
-}
-
-.stat strong {
-  display: block;
-
-  font-size: 18px;
-
-  margin-bottom: 5px;
-}
-
-.stat span {
-  font-size: 9px;
-
-  color: var(--muted);
-
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
-
-
-/* =========================================
-   HEADERS
-========================================= */
-
-.header {
   display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
   align-items: center;
 
-  gap: 14px;
+  background:
+    rgba(255,255,255,0.72);
 
-  padding: 8px 0 25px;
+  border:
+    1px
+    solid
+    var(--border);
+
+  border-radius: 15px;
+
+  backdrop-filter: blur(8px);
 }
 
-.header h2 {
-  font-size: 23px;
+.stat-card strong {
+  font-size: 18px;
+
+  letter-spacing: -0.4px;
 }
 
-.back {
-  width: 42px;
-  height: 42px;
+.stat-card span {
+  margin-top: 5px;
 
-  background: var(--white);
+  color: var(--muted);
 
-  border: 1px solid var(--border);
+  font-size: 9px;
 
-  border-radius: 12px;
+  font-weight: 600;
 
-  font-size: 20px;
+  text-transform: uppercase;
 
-  color: var(--black);
+  letter-spacing: 0.7px;
 }
 
 
 /* =========================================
-   ACCOUNT TYPE
+   FOOTER
 ========================================= */
 
-.account-intro {
-  color: var(--muted);
+footer {
+  display: flex;
 
-  font-size: 14px;
+  align-items: center;
 
-  line-height: 1.6;
+  justify-content: center;
 
-  margin-bottom: 24px;
+  gap: 7px;
+
+  padding-top: 22px;
+
+  color: #999999;
+
+  font-size: 10px;
 }
 
-.account-card {
-  background: var(--white);
-
-  border: 1px solid var(--border);
-
-  border-radius: 18px;
-
-  padding: 24px 20px;
-
-  margin-bottom: 14px;
-
-  transition: 0.2s;
-
-  cursor: pointer;
+.footer-dot {
+  color: #cccccc;
 }
 
-.account-card:hover {
-  transform: translateY(-3px);
 
-  border-color: var(--black);
+/* =========================================
+   MOBILE
+========================================= */
 
-  box-shadow:
-    0 10px 30px rgba(0,0,0,0.06);
+@media (max-width: 380px) {
+
+  .landing-container {
+    padding:
+      25px
+      16px
+      18px;
+  }
+
+  .hero {
+    padding-top: 35px;
+  }
+
+  .hero h1 {
+    font-size: 34px;
+  }
+
+  .hero-text {
+    font-size: 13px;
+  }
+
+  .stat-card {
+    min-height: 72px;
+  }
+
 }
 
-.account-card h3 {
-  font-size: 18px
+
+/* =========================================
+   LARGE SCREENS
+========================================= */
+
+@media (min-width: 700px) {
+
+  .landing-page {
+    align-items: center;
+
+    padding: 30px;
+  }
+
+  .landing-container {
+    min-height: 700px;
+
+    height: 700px;
+
+    background: var(--background);
+
+    border:
+      1px
+      solid
+      var(--border);
+
+    border-radius: 28px;
+
+    box-shadow:
+      0 25px 70px
+      rgba(0,0,0,0.07);
+  }
+
+}
