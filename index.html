@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
   <meta charset="UTF-8">
 
   <meta
@@ -9,151 +10,2571 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <meta
+    name="description"
+    content="Marketplace Dz - Algeria's online marketplace"
+  >
+
   <title>Marketplace Dz</title>
 
   <link rel="stylesheet" href="style.css">
+
 </head>
 
 
 <body>
 
-  <main class="landing-page">
 
-    <div class="landing-container">
+  <!-- =====================================================
+       APPLICATION
+  ====================================================== -->
 
-      <!-- BRAND -->
+  <div id="app">
 
-      <div class="brand-area">
 
-        <div class="brand-mark">
-          M
-        </div>
+    <!-- ===================================================
+         1. HOME PAGE
+    ==================================================== -->
 
-        <div class="brand-name">
-          Marketplace <span>Dz</span>
-        </div>
+    <section
+      id="homePage"
+      class="page active"
+    >
 
-        <p class="brand-description">
-          Algeria's modern marketplace
-        </p>
+      <div class="container">
+
+        <header class="home-header">
+
+          <div class="logo">
+            Marketplace Dz
+          </div>
+
+          <p>
+            Algeria's online marketplace
+          </p>
+
+        </header>
+
+
+        <main class="home-content">
+
+          <div class="hero-section">
+
+            <span class="hero-label">
+              BUY • SELL • DISCOVER
+            </span>
+
+            <h1>
+              Everything you need,
+              in one marketplace.
+            </h1>
+
+            <p>
+              Discover products from sellers across
+              Algeria or start selling your own products.
+            </p>
+
+          </div>
+
+
+          <div class="home-actions">
+
+            <button
+              type="button"
+              id="createAccountButton"
+            >
+              Create New Account
+            </button>
+
+            <button
+              type="button"
+              id="loginButton"
+            >
+              Login
+            </button>
+
+          </div>
+
+
+          <div class="statistics">
+
+            <div class="stat-card">
+
+              <strong id="usersCount">
+                0
+              </strong>
+
+              <span>
+                Users
+              </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+              <strong id="downloadsCount">
+                0
+              </strong>
+
+              <span>
+                Downloads
+              </span>
+
+            </div>
+
+
+            <div class="stat-card">
+
+              <strong id="productsCount">
+                0
+              </strong>
+
+              <span>
+                Products
+              </span>
+
+            </div>
+
+          </div>
+
+        </main>
+
+
+        <footer class="site-footer">
+
+          <span>
+            Marketplace Dz
+          </span>
+
+          <span>
+            Algeria
+          </span>
+
+        </footer>
 
       </div>
 
+    </section>
 
-      <!-- MAIN CONTENT -->
 
-      <section class="hero">
 
-        <div class="hero-label">
-          BUY • SELL • DISCOVER
-        </div>
+    <!-- ===================================================
+         2. ACCOUNT TYPE PAGE
+    ==================================================== -->
 
-        <h1>
-          Everything you need,
-          <br>
-          in one marketplace.
-        </h1>
+    <section
+      id="accountTypePage"
+      class="page"
+    >
 
-        <p class="hero-text">
-          Discover products from sellers across
-          Algeria or start selling your own products.
+      <div class="container">
+
+        <header class="page-header">
+
+          <button
+            type="button"
+            class="back-button"
+            id="accountTypeBackButton"
+          >
+            Back
+          </button>
+
+          <h2>
+            Create Account
+          </h2>
+
+        </header>
+
+
+        <main>
+
+          <p class="section-description">
+            Choose the type of account you want to create.
+          </p>
+
+
+          <div class="account-type-options">
+
+            <button
+              type="button"
+              class="account-type-card"
+              id="sellerAccountButton"
+            >
+
+              <h3>
+                Seller
+              </h3>
+
+              <p>
+                Sell your products, manage orders
+                and track your earnings.
+              </p>
+
+            </button>
+
+
+            <button
+              type="button"
+              class="account-type-card"
+              id="buyerAccountButton"
+            >
+
+              <h3>
+                Buyer
+              </h3>
+
+              <p>
+                Discover products, save favorites
+                and place orders.
+              </p>
+
+            </button>
+
+          </div>
+
+        </main>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         3. SIGN UP PAGE
+    ==================================================== -->
+
+    <section
+      id="signupPage"
+      class="page"
+    >
+
+      <div class="container">
+
+        <header class="page-header">
+
+          <button
+            type="button"
+            class="back-button"
+            id="signupBackButton"
+          >
+            Back
+          </button>
+
+          <h2 id="signupTitle">
+            Create Account
+          </h2>
+
+        </header>
+
+
+        <main>
+
+          <form
+            id="signupForm"
+            class="form"
+          >
+
+            <div class="form-group">
+
+              <label for="signupName">
+                Full Name
+              </label>
+
+              <input
+                type="text"
+                id="signupName"
+                name="name"
+                placeholder="Enter your full name"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="signupUsername">
+                Username
+              </label>
+
+              <input
+                type="text"
+                id="signupUsername"
+                name="username"
+                placeholder="Choose a username"
+                autocomplete="username"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="signupEmail">
+                Email
+              </label>
+
+              <input
+                type="email"
+                id="signupEmail"
+                name="email"
+                placeholder="Enter your email"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="signupPassword">
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="signupPassword"
+                name="password"
+                placeholder="Create a password"
+                autocomplete="new-password"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="signupConfirmPassword">
+                Confirm Password
+              </label>
+
+              <input
+                type="password"
+                id="signupConfirmPassword"
+                name="confirmPassword"
+                placeholder="Confirm your password"
+                autocomplete="new-password"
+                required
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              id="signupSubmitButton"
+            >
+              Create Account
+            </button>
+
+
+            <p
+              id="signupMessage"
+              class="form-message"
+            ></p>
+
+          </form>
+
+        </main>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         4. LOGIN PAGE
+    ==================================================== -->
+
+    <section
+      id="loginPage"
+      class="page"
+    >
+
+      <div class="container">
+
+        <header class="page-header">
+
+          <button
+            type="button"
+            class="back-button"
+            id="loginBackButton"
+          >
+            Back
+          </button>
+
+          <h2>
+            Login
+          </h2>
+
+        </header>
+
+
+        <main>
+
+          <form
+            id="loginForm"
+            class="form"
+          >
+
+            <div class="form-group">
+
+              <label for="loginIdentifier">
+                Email or Username
+              </label>
+
+              <input
+                type="text"
+                id="loginIdentifier"
+                name="identifier"
+                placeholder="Email or username"
+                autocomplete="username"
+                required
+              >
+
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="loginPassword">
+                Password
+              </label>
+
+              <input
+                type="password"
+                id="loginPassword"
+                name="password"
+                placeholder="Your password"
+                autocomplete="current-password"
+                required
+              >
+
+            </div>
+
+
+            <button
+              type="submit"
+              id="loginSubmitButton"
+            >
+              Login
+            </button>
+
+
+            <p
+              id="loginMessage"
+              class="form-message"
+            ></p>
+
+
+            <button
+              type="button"
+              class="text-button"
+              id="goToSignupButton"
+            >
+              Don't have an account? Create one
+            </button>
+
+          </form>
+
+        </main>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         5. SELLER APPLICATION
+    ==================================================== -->
+
+    <section
+      id="sellerPage"
+      class="page seller-application"
+    >
+
+      <div class="seller-layout">
+
+
+        <!-- SELLER HEADER -->
+
+        <header class="seller-header">
+
+          <div>
+
+            <span>
+              Marketplace Dz
+            </span>
+
+            <h1>
+              Seller Dashboard
+            </h1>
+
+            <p id="sellerWelcome">
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <!-- SELLER CONTENT -->
+
+        <main class="seller-content">
+
+
+          <!-- SELLER HOME -->
+
+          <section
+            id="sellerHomeSection"
+            class="seller-section active-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Dashboard
+              </h2>
+
+              <p>
+                Manage your store and sales.
+              </p>
+
+            </div>
+
+
+            <div class="seller-summary">
+
+              <div class="summary-card">
+
+                <span>
+                  Today's Earnings
+                </span>
+
+                <strong id="dailyEarnings">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <div class="summary-card">
+
+                <span>
+                  Monthly Earnings
+                </span>
+
+                <strong id="monthlyEarnings">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <div class="summary-card">
+
+                <span>
+                  Total Orders
+                </span>
+
+                <strong id="totalSellerOrders">
+                  0
+                </strong>
+
+              </div>
+
+
+              <div class="summary-card">
+
+                <span>
+                  Products
+                </span>
+
+                <strong id="sellerProductsCount">
+                  0
+                </strong>
+
+              </div>
+
+            </div>
+
+
+            <div class="seller-dashboard-actions">
+
+              <button
+                type="button"
+                id="sellerAddProductButton"
+              >
+                Add New Product
+              </button>
+
+
+              <button
+                type="button"
+                id="sellerOrdersButton"
+              >
+                Manage Orders
+              </button>
+
+
+              <button
+                type="button"
+                id="sellerEarningsButton"
+              >
+                View Earnings
+              </button>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- SELLER PRODUCTS -->
+
+          <section
+            id="sellerProductsSection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Products
+              </h2>
+
+              <p>
+                Add and manage your products.
+              </p>
+
+            </div>
+
+
+            <button
+              type="button"
+              id="addProductButton"
+            >
+              Add New Product
+            </button>
+
+
+            <div
+              id="sellerProductsList"
+              class="products-list"
+            >
+
+              <div class="empty-state">
+
+                <h3>
+                  No products yet
+                </h3>
+
+                <p>
+                  Your published products will appear here.
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- ADD PRODUCT -->
+
+          <section
+            id="addProductSection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Add New Product
+              </h2>
+
+              <p>
+                Add your product information.
+              </p>
+
+            </div>
+
+
+            <form
+              id="productForm"
+              class="form"
+            >
+
+              <div class="form-group">
+
+                <label for="productName">
+                  Product Name
+                </label>
+
+                <input
+                  type="text"
+                  id="productName"
+                  name="productName"
+                  placeholder="Enter product name"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="productCategory">
+                  Category
+                </label>
+
+                <select
+                  id="productCategory"
+                  name="productCategory"
+                  required
+                >
+
+                  <option value="">
+                    Select a category
+                  </option>
+
+                  <option value="accessories">
+                    Accessories
+                  </option>
+
+                  <option value="cars-motorcycles">
+                    Cars & Motorcycles
+                  </option>
+
+                  <option value="computers">
+                    Computers
+                  </option>
+
+                  <option value="kitchen">
+                    Kitchen Tools
+                  </option>
+
+                  <option value="electronics">
+                    Electronics
+                  </option>
+
+                  <option value="home">
+                    Home Tools
+                  </option>
+
+                  <option value="handicrafts">
+                    Handicrafts
+                  </option>
+
+                  <option value="decoration">
+                    Decoration
+                  </option>
+
+                  <option value="bags-fashion">
+                    Bags & Fashion
+                  </option>
+
+                  <option value="beauty-care">
+                    Beauty & Care
+                  </option>
+
+                  <option value="sports">
+                    Sports
+                  </option>
+
+                  <option value="camping">
+                    Camping & Hiking
+                  </option>
+
+                  <option value="games-toys">
+                    Games & Toys
+                  </option>
+
+                  <option value="school">
+                    School Supplies
+                  </option>
+
+                  <option value="summer">
+                    Summer Products
+                  </option>
+
+                  <option value="winter">
+                    Winter Products
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="productImages">
+                  Product Images
+                </label>
+
+                <input
+                  type="file"
+                  id="productImages"
+                  name="productImages"
+                  accept="image/*"
+                  multiple
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="productDescription">
+                  Product Description
+                </label>
+
+                <textarea
+                  id="productDescription"
+                  name="productDescription"
+                  placeholder="Describe your product"
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="productPrice">
+                  Selling Price
+                </label>
+
+                <input
+                  type="number"
+                  id="productPrice"
+                  name="productPrice"
+                  min="0"
+                  step="1"
+                  placeholder="Enter price in DZD"
+                  required
+                >
+
+              </div>
+
+
+              <div class="commission-information">
+
+                <div>
+
+                  <span>
+                    Application Commission
+                  </span>
+
+                  <strong id="productCommission">
+                    0 DZD
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Seller Net Price
+                  </span>
+
+                  <strong id="sellerNetPrice">
+                    0 DZD
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <button
+                type="submit"
+                id="publishProductButton"
+              >
+                Publish Product
+              </button>
+
+
+              <p
+                id="productMessage"
+                class="form-message"
+              ></p>
+
+            </form>
+
+          </section>
+
+
+
+          <!-- SELLER ORDERS -->
+
+          <section
+            id="sellerOrdersSection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Orders
+              </h2>
+
+              <p>
+                Monitor your customer orders.
+              </p>
+
+            </div>
+
+
+            <div class="order-tabs">
+
+              <button
+                type="button"
+                id="sellerNewOrdersTab"
+              >
+                New Orders
+              </button>
+
+              <button
+                type="button"
+                id="sellerDeliveredOrdersTab"
+              >
+                Delivered
+              </button>
+
+              <button
+                type="button"
+                id="sellerReturnedOrdersTab"
+              >
+                Returned
+              </button>
+
+            </div>
+
+
+            <div
+              id="sellerOrdersList"
+              class="orders-list"
+            >
+
+              <div class="empty-state">
+
+                <h3>
+                  No orders yet
+                </h3>
+
+                <p>
+                  Customer orders will appear here.
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- SELLER EARNINGS -->
+
+          <section
+            id="sellerEarningsSection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Earnings
+              </h2>
+
+              <p>
+                Track your daily and monthly earnings.
+              </p>
+
+            </div>
+
+
+            <div class="earnings-cards">
+
+              <div class="earnings-card">
+
+                <span>
+                  Today
+                </span>
+
+                <strong id="earningsToday">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <div class="earnings-card">
+
+                <span>
+                  This Month
+                </span>
+
+                <strong id="earningsMonth">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <div class="earnings-card">
+
+                <span>
+                  Total Sales
+                </span>
+
+                <strong id="totalSales">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <div class="earnings-card">
+
+                <span>
+                  Application Fees
+                </span>
+
+                <strong id="totalApplicationFees">
+                  0 DZD
+                </strong>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- SELLER DELIVERY -->
+
+          <section
+            id="sellerDeliverySection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Delivery Prices
+              </h2>
+
+              <p>
+                Set your delivery price for each wilaya.
+              </p>
+
+            </div>
+
+
+            <div
+              id="sellerWilayaDeliveryList"
+              class="wilaya-list"
+            >
+
+              <!-- Wilaya prices will be generated later -->
+
+            </div>
+
+          </section>
+
+
+
+          <!-- SELLER PAYMENT -->
+
+          <section
+            id="sellerPaymentSection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Payment Methods
+              </h2>
+
+              <p>
+                Choose the payment methods you accept.
+              </p>
+
+            </div>
+
+
+            <form
+              id="sellerPaymentForm"
+              class="settings-form"
+            >
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  id="goldCardPayment"
+                >
+
+                <span>
+                  Gold Card
+                </span>
+
+              </label>
+
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  id="cibPayment"
+                >
+
+                <span>
+                  CIB
+                </span>
+
+              </label>
+
+
+              <label class="checkbox-option">
+
+                <input
+                  type="checkbox"
+                  id="cashOnDelivery"
+                >
+
+                <span>
+                  Cash on Delivery
+                </span>
+
+              </label>
+
+
+              <div class="form-group">
+
+                <label for="sellerCCP">
+                  CCP Account
+                </label>
+
+                <input
+                  type="text"
+                  id="sellerCCP"
+                  placeholder="Enter CCP account"
+                >
+
+              </div>
+
+
+              <button
+                type="submit"
+                id="savePaymentSettings"
+              >
+                Save Payment Settings
+              </button>
+
+            </form>
+
+          </section>
+
+
+
+          <!-- SELLER PROFILE -->
+
+          <section
+            id="sellerProfileSection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Profile
+              </h2>
+
+              <p>
+                Manage your personal information.
+              </p>
+
+            </div>
+
+
+            <div class="profile-information">
+
+              <div class="profile-row">
+
+                <span>
+                  Full Name
+                </span>
+
+                <strong id="sellerProfileName">
+                </strong>
+
+              </div>
+
+
+              <div class="profile-row">
+
+                <span>
+                  Username
+                </span>
+
+                <strong id="sellerProfileUsername">
+                </strong>
+
+              </div>
+
+
+              <div class="profile-row">
+
+                <span>
+                  Email
+                </span>
+
+                <strong id="sellerProfileEmail">
+                </strong>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- SELLER SETTINGS -->
+
+          <section
+            id="sellerSettingsSection"
+            class="seller-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Settings
+              </h2>
+
+              <p>
+                Manage your account settings.
+              </p>
+
+            </div>
+
+
+            <button
+              type="button"
+              id="sellerChangePasswordButton"
+            >
+              Change Password
+            </button>
+
+
+            <button
+              type="button"
+              id="sellerDarkModeButton"
+            >
+              Dark Mode
+            </button>
+
+
+            <button
+              type="button"
+              id="sellerHelpButton"
+            >
+              Help & Support
+            </button>
+
+
+            <button
+              type="button"
+              id="sellerLogoutButton"
+            >
+              Logout
+            </button>
+
+          </section>
+
+
+        </main>
+
+
+        <!-- SELLER NAVIGATION -->
+
+        <nav class="seller-navigation">
+
+          <button
+            type="button"
+            data-seller-section="sellerHomeSection"
+          >
+            Dashboard
+          </button>
+
+          <button
+            type="button"
+            data-seller-section="sellerProductsSection"
+          >
+            Products
+          </button>
+
+          <button
+            type="button"
+            data-seller-section="sellerOrdersSection"
+          >
+            Orders
+          </button>
+
+          <button
+            type="button"
+            data-seller-section="sellerEarningsSection"
+          >
+            Earnings
+          </button>
+
+          <button
+            type="button"
+            data-seller-section="sellerSettingsSection"
+          >
+            Settings
+          </button>
+
+        </nav>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         6. BUYER APPLICATION
+    ==================================================== -->
+
+    <section
+      id="buyerPage"
+      class="page buyer-application"
+    >
+
+      <div class="buyer-layout">
+
+
+        <!-- BUYER HEADER -->
+
+        <header class="buyer-header">
+
+          <div>
+
+            <span>
+              Marketplace Dz
+            </span>
+
+            <h1>
+              Discover
+            </h1>
+
+            <p id="buyerWelcome">
+            </p>
+
+          </div>
+
+        </header>
+
+
+        <!-- BUYER CONTENT -->
+
+        <main class="buyer-content">
+
+
+          <!-- BUYER HOME -->
+
+          <section
+            id="buyerHomeSection"
+            class="buyer-section active-section"
+          >
+
+            <div class="search-area">
+
+              <label for="productSearch">
+                Search Products
+              </label>
+
+              <input
+                type="search"
+                id="productSearch"
+                placeholder="Search products..."
+              >
+
+            </div>
+
+
+            <div
+              id="buyerProductsList"
+              class="products-grid"
+            >
+
+              <div class="empty-state">
+
+                <h3>
+                  No products available
+                </h3>
+
+                <p>
+                  Products published by sellers
+                  will appear here.
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER FAVORITES -->
+
+          <section
+            id="buyerFavoritesSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Favorites
+              </h2>
+
+              <p>
+                Products you save will appear here.
+              </p>
+
+            </div>
+
+
+            <div
+              id="favoritesList"
+              class="products-grid"
+            >
+
+              <div class="empty-state">
+
+                <h3>
+                  No favorites
+                </h3>
+
+                <p>
+                  Save products to find them easily later.
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER CATEGORIES -->
+
+          <section
+            id="buyerCategoriesSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Categories
+              </h2>
+
+              <p>
+                Browse products by category.
+              </p>
+
+            </div>
+
+
+            <div class="category-grid">
+
+
+              <button
+                type="button"
+                data-category="accessories"
+              >
+                Accessories
+              </button>
+
+
+              <button
+                type="button"
+                data-category="cars-motorcycles"
+              >
+                Cars & Motorcycles
+              </button>
+
+
+              <button
+                type="button"
+                data-category="computers"
+              >
+                Computers
+              </button>
+
+
+              <button
+                type="button"
+                data-category="kitchen"
+              >
+                Kitchen Tools
+              </button>
+
+
+              <button
+                type="button"
+                data-category="electronics"
+              >
+                Electronics
+              </button>
+
+
+              <button
+                type="button"
+                data-category="home"
+              >
+                Home Tools
+              </button>
+
+
+              <button
+                type="button"
+                data-category="handicrafts"
+              >
+                Handicrafts
+              </button>
+
+
+              <button
+                type="button"
+                data-category="decoration"
+              >
+                Decoration
+              </button>
+
+
+              <button
+                type="button"
+                data-category="bags-fashion"
+              >
+                Bags & Fashion
+              </button>
+
+
+              <button
+                type="button"
+                data-category="beauty-care"
+              >
+                Beauty & Care
+              </button>
+
+
+              <button
+                type="button"
+                data-category="sports"
+              >
+                Sports
+              </button>
+
+
+              <button
+                type="button"
+                data-category="camping"
+              >
+                Camping & Hiking
+              </button>
+
+
+              <button
+                type="button"
+                data-category="games-toys"
+              >
+                Games & Toys
+              </button>
+
+
+              <button
+                type="button"
+                data-category="school"
+              >
+                School Supplies
+              </button>
+
+
+              <button
+                type="button"
+                data-category="summer"
+              >
+                Summer Products
+              </button>
+
+
+              <button
+                type="button"
+                data-category="winter"
+              >
+                Winter Products
+              </button>
+
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER CART -->
+
+          <section
+            id="buyerCartSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Cart
+              </h2>
+
+              <p>
+                Products you choose to order.
+              </p>
+
+            </div>
+
+
+            <div
+              id="cartItems"
+              class="cart-items"
+            >
+
+              <div class="empty-state">
+
+                <h3>
+                  Your cart is empty
+                </h3>
+
+                <p>
+                  Products you choose will appear here.
+                </p>
+
+              </div>
+
+            </div>
+
+
+            <div class="cart-summary">
+
+              <div>
+
+                <span>
+                  Products Total
+                </span>
+
+                <strong id="cartProductsTotal">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Delivery
+                </span>
+
+                <strong id="cartDeliveryTotal">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <div>
+
+                <span>
+                  Total
+                </span>
+
+                <strong id="cartGrandTotal">
+                  0 DZD
+                </strong>
+
+              </div>
+
+
+              <button
+                type="button"
+                id="checkoutButton"
+              >
+                Continue to Checkout
+              </button>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER PRODUCT DETAILS -->
+
+          <section
+            id="productDetailsSection"
+            class="buyer-section"
+          >
+
+            <button
+              type="button"
+              id="productDetailsBackButton"
+            >
+              Back
+            </button>
+
+
+            <div
+              id="productDetails"
+              class="product-details"
+            >
+
+              <div
+                id="productDetailsImages"
+                class="product-images"
+              >
+              </div>
+
+
+              <div class="product-information">
+
+                <h2 id="productDetailsName">
+                </h2>
+
+                <p id="productDetailsDescription">
+                </p>
+
+                <strong id="productDetailsPrice">
+                  0 DZD
+                </strong>
+
+                <p id="productDetailsSeller">
+                </p>
+
+                <p id="productDetailsDelivery">
+                </p>
+
+              </div>
+
+
+              <div class="product-actions">
+
+                <button
+                  type="button"
+                  id="productFavoriteButton"
+                >
+                  Add to Favorites
+                </button>
+
+
+                <button
+                  type="button"
+                  id="productAddToCartButton"
+                >
+                  Add to Cart
+                </button>
+
+
+                <button
+                  type="button"
+                  id="productOrderButton"
+                >
+                  Order Now
+                </button>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- CHECKOUT -->
+
+          <section
+            id="checkoutSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Checkout
+              </h2>
+
+              <p>
+                Enter your information to place the order.
+              </p>
+
+            </div>
+
+
+            <form
+              id="checkoutForm"
+              class="form"
+            >
+
+              <div class="form-group">
+
+                <label for="buyerName">
+                  Full Name
+                </label>
+
+                <input
+                  type="text"
+                  id="buyerName"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="buyerEmail">
+                  Email
+                </label>
+
+                <input
+                  type="email"
+                  id="buyerEmail"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="buyerPhone">
+                  Phone Number
+                </label>
+
+                <input
+                  type="tel"
+                  id="buyerPhone"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="buyerWilaya">
+                  Wilaya
+                </label>
+
+                <select
+                  id="buyerWilaya"
+                  required
+                >
+
+                  <option value="">
+                    Select Wilaya
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="buyerAddress">
+                  Address
+                </label>
+
+                <textarea
+                  id="buyerAddress"
+                  placeholder="Enter your delivery address"
+                  required
+                ></textarea>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="buyerPaymentMethod">
+                  Payment Method
+                </label>
+
+                <select
+                  id="buyerPaymentMethod"
+                  required
+                >
+
+                  <option value="">
+                    Select payment method
+                  </option>
+
+                  <option value="gold-card">
+                    Gold Card
+                  </option>
+
+                  <option value="cib">
+                    CIB
+                  </option>
+
+                  <option value="cash-on-delivery">
+                    Cash on Delivery
+                  </option>
+
+                </select>
+
+              </div>
+
+
+              <div class="checkout-summary">
+
+                <div>
+
+                  <span>
+                    Products
+                  </span>
+
+                  <strong id="checkoutProductsTotal">
+                    0 DZD
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Delivery
+                  </span>
+
+                  <strong id="checkoutDeliveryTotal">
+                    0 DZD
+                  </strong>
+
+                </div>
+
+
+                <div>
+
+                  <span>
+                    Total
+                  </span>
+
+                  <strong id="checkoutGrandTotal">
+                    0 DZD
+                  </strong>
+
+                </div>
+
+              </div>
+
+
+              <button
+                type="submit"
+                id="placeOrderButton"
+              >
+                Place Order
+              </button>
+
+
+              <p
+                id="checkoutMessage"
+                class="form-message"
+              ></p>
+
+            </form>
+
+          </section>
+
+
+
+          <!-- BUYER ORDERS -->
+
+          <section
+            id="buyerOrdersSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Orders
+              </h2>
+
+              <p>
+                Track your orders.
+              </p>
+
+            </div>
+
+
+            <div
+              id="buyerOrdersList"
+              class="orders-list"
+            >
+
+              <div class="empty-state">
+
+                <h3>
+                  No orders yet
+                </h3>
+
+                <p>
+                  Your orders will appear here.
+                </p>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER DELIVERY PRICES -->
+
+          <section
+            id="buyerDeliverySection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Delivery Prices
+              </h2>
+
+              <p>
+                Check delivery prices by Wilaya.
+              </p>
+
+            </div>
+
+
+            <div
+              id="buyerWilayaDeliveryList"
+              class="wilaya-list"
+            >
+
+              <!-- Wilaya prices will be generated later -->
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER MORE -->
+
+          <section
+            id="buyerMoreSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                More
+              </h2>
+
+              <p>
+                Manage your account and settings.
+              </p>
+
+            </div>
+
+
+            <div class="more-options">
+
+
+              <button
+                type="button"
+                id="buyerProfileButton"
+              >
+                Profile
+              </button>
+
+
+              <button
+                type="button"
+                id="buyerOrdersButton"
+              >
+                Orders
+              </button>
+
+
+              <button
+                type="button"
+                id="buyerFavoritesButton"
+              >
+                Favorites
+              </button>
+
+
+              <button
+                type="button"
+                id="buyerDeliveryButton"
+              >
+                Delivery Prices
+              </button>
+
+
+              <button
+                type="button"
+                id="buyerHelpButton"
+              >
+                Help & Support
+              </button>
+
+
+              <button
+                type="button"
+                id="buyerDarkModeButton"
+              >
+                Dark Mode
+              </button>
+
+
+              <button
+                type="button"
+                id="buyerLogoutButton"
+              >
+                Logout
+              </button>
+
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER PROFILE -->
+
+          <section
+            id="buyerProfileSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Profile
+              </h2>
+
+              <p>
+                Your account information.
+              </p>
+
+            </div>
+
+
+            <div class="profile-information">
+
+              <div class="profile-row">
+
+                <span>
+                  Full Name
+                </span>
+
+                <strong id="buyerProfileName">
+                </strong>
+
+              </div>
+
+
+              <div class="profile-row">
+
+                <span>
+                  Username
+                </span>
+
+                <strong id="buyerProfileUsername">
+                </strong>
+
+              </div>
+
+
+              <div class="profile-row">
+
+                <span>
+                  Email
+                </span>
+
+                <strong id="buyerProfileEmail">
+                </strong>
+
+              </div>
+
+            </div>
+
+          </section>
+
+
+
+          <!-- BUYER HELP -->
+
+          <section
+            id="buyerHelpSection"
+            class="buyer-section"
+          >
+
+            <div class="section-heading">
+
+              <h2>
+                Help & Support
+              </h2>
+
+              <p>
+                We will add support options here.
+              </p>
+
+            </div>
+
+
+            <div class="support-options">
+
+              <button
+                type="button"
+                id="contactSupportButton"
+              >
+                Contact Support
+              </button>
+
+
+              <button
+                type="button"
+                id="faqButton"
+              >
+                Frequently Asked Questions
+              </button>
+
+            </div>
+
+          </section>
+
+
+        </main>
+
+
+        <!-- BUYER BOTTOM NAVIGATION -->
+
+        <nav class="buyer-navigation">
+
+          <button
+            type="button"
+            class="buyer-nav-item active"
+            data-buyer-section="buyerHomeSection"
+          >
+            Home
+          </button>
+
+
+          <button
+            type="button"
+            class="buyer-nav-item"
+            data-buyer-section="buyerFavoritesSection"
+          >
+            Favorites
+          </button>
+
+
+          <button
+            type="button"
+            class="buyer-nav-item"
+            data-buyer-section="buyerCategoriesSection"
+          >
+            Categories
+          </button>
+
+
+          <button
+            type="button"
+            class="buyer-nav-item"
+            data-buyer-section="buyerCartSection"
+          >
+            Cart
+          </button>
+
+
+          <button
+            type="button"
+            class="buyer-nav-item"
+            data-buyer-section="buyerMoreSection"
+          >
+            More
+          </button>
+
+        </nav>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         7. CHANGE PASSWORD
+    ==================================================== -->
+
+    <section
+      id="changePasswordPage"
+      class="page"
+    >
+
+      <div class="container">
+
+        <header class="page-header">
+
+          <button
+            type="button"
+            id="changePasswordBackButton"
+            class="back-button"
+          >
+            Back
+          </button>
+
+          <h2>
+            Change Password
+          </h2>
+
+        </header>
+
+
+        <form
+          id="changePasswordForm"
+          class="form"
+        >
+
+          <div class="form-group">
+
+            <label for="currentPassword">
+              Current Password
+            </label>
+
+            <input
+              type="password"
+              id="currentPassword"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="newPassword">
+              New Password
+            </label>
+
+            <input
+              type="password"
+              id="newPassword"
+              required
+            >
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="confirmNewPassword">
+              Confirm New Password
+            </label>
+
+            <input
+              type="password"
+              id="confirmNewPassword"
+              required
+            >
+
+          </div>
+
+
+          <button
+            type="submit"
+            id="changePasswordSubmitButton"
+          >
+            Change Password
+          </button>
+
+
+          <p
+            id="changePasswordMessage"
+            class="form-message"
+          ></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         8. SUPPORT PAGE
+    ==================================================== -->
+
+    <section
+      id="supportPage"
+      class="page"
+    >
+
+      <div class="container">
+
+        <header class="page-header">
+
+          <button
+            type="button"
+            id="supportBackButton"
+            class="back-button"
+          >
+            Back
+          </button>
+
+          <h2>
+            Help & Support
+          </h2>
+
+        </header>
+
+
+        <main class="support-content">
+
+          <div class="support-card">
+
+            <h3>
+              Contact Support
+            </h3>
+
+            <p>
+              Contact Marketplace Dz support
+              for assistance.
+            </p>
+
+            <button
+              type="button"
+              id="supportContactButton"
+            >
+              Contact Us
+            </button>
+
+          </div>
+
+
+          <div class="support-card">
+
+            <h3>
+              Frequently Asked Questions
+            </h3>
+
+            <p>
+              Find answers to common questions.
+            </p>
+
+            <button
+              type="button"
+              id="supportFaqButton"
+            >
+              View FAQ
+            </button>
+
+          </div>
+
+        </main>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         9. GLOBAL LOGOUT CONFIRMATION
+    ==================================================== -->
+
+    <div
+      id="logoutModal"
+      class="modal"
+      aria-hidden="true"
+    >
+
+      <div class="modal-content">
+
+        <h2>
+          Logout
+        </h2>
+
+        <p>
+          Are you sure you want to logout?
         </p>
 
-
-        <!-- BUTTONS -->
-
-        <div class="action-area">
+        <div class="modal-actions">
 
           <button
-            class="primary-button"
-            onclick="openCreateAccount()"
+            type="button"
+            id="cancelLogoutButton"
           >
-            Create New Account
+            Cancel
           </button>
 
-
           <button
-            class="secondary-button"
-            onclick="openLogin()"
+            type="button"
+            id="confirmLogoutButton"
           >
-            Login
+            Logout
           </button>
 
         </div>
 
-      </section>
-
-
-      <!-- STATISTICS -->
-
-      <section class="statistics">
-
-        <div class="stat-card">
-
-          <strong>
-            0+
-          </strong>
-
-          <span>
-            Users
-          </span>
-
-        </div>
-
-
-        <div class="stat-card">
-
-          <strong>
-            0+
-          </strong>
-
-          <span>
-            Downloads
-          </span>
-
-        </div>
-
-
-        <div class="stat-card">
-
-          <strong>
-            0+
-          </strong>
-
-          <span>
-            Products
-          </span>
-
-        </div>
-
-      </section>
-
-
-      <!-- FOOTER -->
-
-      <footer>
-
-        <span>
-          Marketplace Dz
-        </span>
-
-        <span class="footer-dot">
-          •
-        </span>
-
-        <span>
-          Algeria
-        </span>
-
-      </footer>
+      </div>
 
     </div>
 
-  </main>
 
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       Will be added later in script.js
+  ====================================================== -->
 
   <script src="script.js"></script>
 
 </body>
 
-</html>
+                  </html>
