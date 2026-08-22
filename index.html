@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="UTF-8">
 
   <meta
@@ -13,981 +12,148 @@
   <title>Marketplace Dz</title>
 
   <link rel="stylesheet" href="style.css">
-
 </head>
 
 
 <body>
 
+  <main class="landing-page">
 
-  <!-- =========================
-       HOME PAGE
-  ========================= -->
+    <div class="landing-container">
 
-  <section
-    id="homePage"
-    class="page active"
-  >
+      <!-- BRAND -->
 
-    <div class="container home">
+      <div class="brand-area">
 
-      <div class="brand">
-
-        <h1>Marketplace Dz</h1>
-
-        <div class="brand-line"></div>
-
-      </div>
-
-
-      <p class="subtitle">
-        Algeria's online marketplace
-      </p>
-
-
-      <div class="home-buttons">
-
-        <button
-          class="main-btn"
-          onclick="showPage('accountTypePage')"
-        >
-          Create New Account
-        </button>
-
-
-        <button
-          class="main-btn secondary"
-          onclick="showPage('loginPage')"
-        >
-          Login
-        </button>
-
-      </div>
-
-
-      <div class="stats">
-
-        <div class="stat">
-
-          <strong>0</strong>
-
-          <span>Users</span>
-
+        <div class="brand-mark">
+          M
         </div>
 
-
-        <div class="stat">
-
-          <strong>0</strong>
-
-          <span>Downloads</span>
-
+        <div class="brand-name">
+          Marketplace <span>Dz</span>
         </div>
 
-
-        <div class="stat">
-
-          <strong>0</strong>
-
-          <span>Products</span>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       ACCOUNT TYPE
-  ========================= -->
-
-  <section
-    id="accountTypePage"
-    class="page"
-  >
-
-    <div class="container">
-
-      <div class="header">
-
-        <button
-          class="back"
-          onclick="showPage('homePage')"
-        >
-          ←
-        </button>
-
-
-        <h2>
-          Create Account
-        </h2>
-
-      </div>
-
-
-      <p class="account-intro">
-
-        Choose the type of account
-        you want to create.
-
-      </p>
-
-
-      <div
-        class="account-card"
-        onclick="selectAccountType('seller')"
-      >
-
-        <h3>
-          Seller
-        </h3>
-
-
-        <p>
-
-          Create a seller account
-          to publish products,
-          manage orders and track
-          your earnings.
-
+        <p class="brand-description">
+          Algeria's modern marketplace
         </p>
 
       </div>
 
 
-      <div
-        class="account-card"
-        onclick="selectAccountType('buyer')"
-      >
+      <!-- MAIN CONTENT -->
 
-        <h3>
-          Buyer
-        </h3>
+      <section class="hero">
 
+        <div class="hero-label">
+          BUY • SELL • DISCOVER
+        </div>
 
-        <p>
+        <h1>
+          Everything you need,
+          <br>
+          in one marketplace.
+        </h1>
 
-          Create a buyer account
-          to discover products,
-          save favorites and
-          place orders.
-
+        <p class="hero-text">
+          Discover products from sellers across
+          Algeria or start selling your own products.
         </p>
 
-      </div>
 
-    </div>
+        <!-- BUTTONS -->
 
-  </section>
-
-
-
-  <!-- =========================
-       SIGN UP
-  ========================= -->
-
-  <section
-    id="signupPage"
-    class="page"
-  >
-
-    <div class="container">
-
-      <div class="header">
-
-        <button
-          class="back"
-          onclick="showPage('accountTypePage')"
-        >
-          ←
-        </button>
-
-
-        <h2 id="signupTitle">
-          Create Account
-        </h2>
-
-      </div>
-
-
-      <div class="form-box">
-
-        <form id="signupForm">
-
-
-          <div class="form-group">
-
-            <label>
-              Full Name
-            </label>
-
-
-            <input
-              type="text"
-              id="signupName"
-              placeholder="Enter your full name"
-              required
-            >
-
-          </div>
-
-
-
-          <div class="form-group">
-
-            <label>
-              Username
-            </label>
-
-
-            <input
-              type="text"
-              id="signupUsername"
-              placeholder="Choose a username"
-              required
-            >
-
-          </div>
-
-
-
-          <div class="form-group">
-
-            <label>
-              Email
-            </label>
-
-
-            <input
-              type="email"
-              id="signupEmail"
-              placeholder="Enter your email"
-              required
-            >
-
-          </div>
-
-
-
-          <div class="form-group">
-
-            <label>
-              Password
-            </label>
-
-
-            <input
-              type="password"
-              id="signupPassword"
-              placeholder="Create a password"
-              required
-            >
-
-          </div>
-
-
-
-          <div class="form-group">
-
-            <label>
-              Confirm Password
-            </label>
-
-
-            <input
-              type="password"
-              id="signupConfirmPassword"
-              placeholder="Confirm your password"
-              required
-            >
-
-          </div>
-
-
+        <div class="action-area">
 
           <button
-            class="submit-btn"
-            type="submit"
+            class="primary-button"
+            onclick="openCreateAccount()"
           >
-            Create Account
+            Create New Account
           </button>
 
 
-          <div
-            id="signupMessage"
-            class="message"
-          ></div>
-
-
-        </form>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       LOGIN
-  ========================= -->
-
-  <section
-    id="loginPage"
-    class="page"
-  >
-
-    <div class="container">
-
-      <div class="header">
-
-        <button
-          class="back"
-          onclick="showPage('homePage')"
-        >
-          ←
-        </button>
-
-
-        <h2>
-          Login
-        </h2>
-
-      </div>
-
-
-      <div class="form-box">
-
-        <form id="loginForm">
-
-
-          <div class="form-group">
-
-            <label>
-              Email or Username
-            </label>
-
-
-            <input
-              type="text"
-              id="loginIdentifier"
-              placeholder="Email or username"
-              required
-            >
-
-          </div>
-
-
-
-          <div class="form-group">
-
-            <label>
-              Password
-            </label>
-
-
-            <input
-              type="password"
-              id="loginPassword"
-              placeholder="Your password"
-              required
-            >
-
-          </div>
-
-
-
           <button
-            class="submit-btn"
-            type="submit"
+            class="secondary-button"
+            onclick="openLogin()"
           >
             Login
           </button>
 
+        </div>
 
-          <div
-            id="loginMessage"
-            class="message"
-          ></div>
+      </section>
 
 
-        </form>
+      <!-- STATISTICS -->
 
+      <section class="statistics">
 
-        <div
-          class="link"
-          onclick="showPage('accountTypePage')"
-        >
+        <div class="stat-card">
 
-          Don't have an account?
-          Create one
+          <strong>
+            0+
+          </strong>
+
+          <span>
+            Users
+          </span>
 
         </div>
 
-      </div>
+
+        <div class="stat-card">
+
+          <strong>
+            0+
+          </strong>
+
+          <span>
+            Downloads
+          </span>
+
+        </div>
+
+
+        <div class="stat-card">
+
+          <strong>
+            0+
+          </strong>
+
+          <span>
+            Products
+          </span>
+
+        </div>
+
+      </section>
+
+
+      <!-- FOOTER -->
+
+      <footer>
+
+        <span>
+          Marketplace Dz
+        </span>
+
+        <span class="footer-dot">
+          •
+        </span>
+
+        <span>
+          Algeria
+        </span>
+
+      </footer>
 
     </div>
 
-  </section>
+  </main>
 
-
-
-  <!-- =========================
-       SELLER DASHBOARD
-  ========================= -->
-
-  <section
-    id="sellerPage"
-    class="page"
-  >
-
-    <div class="container">
-
-
-      <h1 class="dashboard-title">
-        Seller Dashboard
-      </h1>
-
-
-      <p
-        class="welcome"
-        id="sellerWelcome"
-      ></p>
-
-
-
-      <div class="dashboard-card">
-
-        <h3>
-          Products
-        </h3>
-
-
-        <p>
-          Add and manage your products.
-        </p>
-
-      </div>
-
-
-
-      <div class="dashboard-card">
-
-        <h3>
-          Orders
-        </h3>
-
-
-        <p>
-          Monitor your orders and returns.
-        </p>
-
-      </div>
-
-
-
-      <div class="dashboard-card">
-
-        <h3>
-          Earnings
-        </h3>
-
-
-        <p>
-          View your daily and monthly earnings.
-        </p>
-
-      </div>
-
-
-
-      <div class="dashboard-card">
-
-        <h3>
-          Settings
-        </h3>
-
-
-        <p>
-          Manage payment methods,
-          delivery prices and account settings.
-        </p>
-
-      </div>
-
-
-
-      <button
-        class="logout"
-        onclick="logout()"
-      >
-        Logout
-      </button>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       BUYER APPLICATION
-  ========================= -->
-
-  <section
-    id="buyerPage"
-    class="page"
-  >
-
-    <div class="buyer-app">
-
-
-      <div class="container">
-
-
-        <div class="buyer-header">
-
-          <h1>
-            Marketplace Dz
-          </h1>
-
-
-          <p id="buyerWelcome">
-          </p>
-
-        </div>
-
-
-
-        <!-- HOME -->
-
-        <div
-          id="buyerHome"
-          class="buyer-section"
-        >
-
-          <div class="search-box">
-
-            <input
-              type="text"
-              id="productSearch"
-              placeholder="Search products..."
-            >
-
-          </div>
-
-
-          <!--
-            IMPORTANT:
-            Products are intentionally empty.
-            Sellers will publish them later.
-          -->
-
-          <div
-            id="productsArea"
-            class="products-area"
-          >
-
-            <div class="empty-products">
-
-              <h3>
-                No products yet
-              </h3>
-
-
-              <p>
-                Products published by sellers
-                will appear here.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- FAVORITES -->
-
-        <div
-          id="buyerFavorites"
-          class="buyer-section"
-          style="display:none;"
-        >
-
-          <h2>
-            Favorites
-          </h2>
-
-
-          <div
-            id="favoritesArea"
-            class="products-area"
-          >
-
-            <div class="empty-products">
-
-              <h3>
-                No favorites yet
-              </h3>
-
-
-              <p>
-                Products you save will appear here.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- CATEGORIES -->
-
-        <div
-          id="buyerCategories"
-          class="buyer-section"
-          style="display:none;"
-        >
-
-          <h2>
-            Categories
-          </h2>
-
-
-          <div class="category-grid">
-
-
-            <div class="category-item">
-              Accessories
-            </div>
-
-
-            <div class="category-item">
-              Cars & Motorcycles
-            </div>
-
-
-            <div class="category-item">
-              Computers
-            </div>
-
-
-            <div class="category-item">
-              Kitchen Tools
-            </div>
-
-
-            <div class="category-item">
-              Electronics
-            </div>
-
-
-            <div class="category-item">
-              Home Tools
-            </div>
-
-
-            <div class="category-item">
-              Handicrafts
-            </div>
-
-
-            <div class="category-item">
-              Decoration
-            </div>
-
-
-            <div class="category-item">
-              Bags & Fashion
-            </div>
-
-
-            <div class="category-item">
-              Beauty & Care
-            </div>
-
-
-            <div class="category-item">
-              Sports
-            </div>
-
-
-            <div class="category-item">
-              Camping & Hiking
-            </div>
-
-
-            <div class="category-item">
-              Toys & Games
-            </div>
-
-
-            <div class="category-item">
-              School Supplies
-            </div>
-
-
-            <div class="category-item">
-              Summer Products
-            </div>
-
-
-            <div class="category-item">
-              Winter Products
-            </div>
-
-
-          </div>
-
-        </div>
-
-
-
-        <!-- CART -->
-
-        <div
-          id="buyerCart"
-          class="buyer-section"
-          style="display:none;"
-        >
-
-          <h2>
-            Cart
-          </h2>
-
-
-          <div
-            id="cartArea"
-            class="products-area"
-          >
-
-            <div class="empty-products">
-
-              <h3>
-                Your cart is empty
-              </h3>
-
-
-              <p>
-                Products you choose to order
-                will appear here.
-              </p>
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-
-        <!-- MORE -->
-
-        <div
-          id="buyerMore"
-          class="buyer-section"
-          style="display:none;"
-        >
-
-          <h2>
-            More
-          </h2>
-
-
-          <div class="dashboard-card">
-
-            <h3>
-              Profile
-            </h3>
-
-
-            <p>
-              Manage your personal information.
-            </p>
-
-          </div>
-
-
-          <div class="dashboard-card">
-
-            <h3>
-              Orders
-            </h3>
-
-
-            <p>
-              View your previous and current orders.
-            </p>
-
-          </div>
-
-
-          <div class="dashboard-card">
-
-            <h3>
-              Delivery Prices
-            </h3>
-
-
-            <p>
-              View delivery prices for all wilayas.
-            </p>
-
-          </div>
-
-
-          <div class="dashboard-card">
-
-            <h3>
-              Help & Support
-            </h3>
-
-
-            <p>
-              Contact Marketplace Dz support.
-            </p>
-
-          </div>
-
-
-          <div class="dashboard-card">
-
-            <h3>
-              Dark Mode
-            </h3>
-
-
-            <button
-              class="main-btn secondary"
-              onclick="toggleDarkMode()"
-            >
-              Change Appearance
-            </button>
-
-          </div>
-
-
-          <button
-            class="logout"
-            onclick="logout()"
-          >
-            Logout
-          </button>
-
-        </div>
-
-
-      </div>
-
-
-
-      <!-- =========================
-           BUYER BOTTOM NAVIGATION
-      ========================= -->
-
-      <nav class="bottom-nav">
-
-
-        <button
-          class="nav-item active"
-          onclick="buyerTab('home')"
-        >
-
-          <span>
-            Home
-          </span>
-
-          <div class="nav-line"></div>
-
-        </button>
-
-
-
-        <button
-          class="nav-item"
-          onclick="buyerTab('favorites')"
-        >
-
-          <span>
-            Favorites
-          </span>
-
-          <div class="nav-line"></div>
-
-        </button>
-
-
-
-        <button
-          class="nav-item"
-          onclick="buyerTab('categories')"
-        >
-
-          <span>
-            Categories
-          </span>
-
-          <div class="nav-line"></div>
-
-        </button>
-
-
-
-        <button
-          class="nav-item"
-          onclick="buyerTab('cart')"
-        >
-
-          <span>
-            Cart
-          </span>
-
-          <div class="nav-line"></div>
-
-        </button>
-
-
-
-        <button
-          class="nav-item"
-          onclick="buyerTab('more')"
-        >
-
-          <span>
-            More
-          </span>
-
-          <div class="nav-line"></div>
-
-        </button>
-
-
-      </nav>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- =========================
-       JAVASCRIPT
-  ========================= -->
 
   <script src="script.js"></script>
 
-
 </body>
 
-              </html>
+</html>
