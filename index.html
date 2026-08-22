@@ -1,381 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Marketplace Dz</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, Helvetica, sans-serif;
-    }
+  <link rel="stylesheet" href="style.css">
 
-    body {
-      min-height: 100vh;
-      background: #f4f6f8;
-      color: #17191c;
-    }
-
-    button,
-    input {
-      font-family: inherit;
-    }
-
-    button {
-      cursor: pointer;
-    }
-
-    .page {
-      display: none;
-      min-height: 100vh;
-    }
-
-    .page.active {
-      display: block;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 450px;
-      margin: auto;
-      padding: 25px 20px;
-    }
-
-
-    /* =========================
-       HOME
-    ========================= */
-
-    #homePage {
-      background:
-        radial-gradient(
-          circle at top right,
-          rgba(0, 0, 0, 0.06),
-          transparent 35%
-        ),
-        linear-gradient(
-          145deg,
-          #ffffff 0%,
-          #f4f6f8 100%
-        );
-    }
-
-    .home {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .brand {
-      margin-bottom: 12px;
-    }
-
-    .brand h1 {
-      font-size: 38px;
-      letter-spacing: -1.5px;
-      font-weight: 800;
-    }
-
-    .brand-line {
-      width: 48px;
-      height: 4px;
-      background: #111;
-      border-radius: 10px;
-      margin: 13px auto 0;
-    }
-
-    .subtitle {
-      color: #777;
-      font-size: 15px;
-      margin-bottom: 38px;
-    }
-
-    .home-buttons {
-      width: 100%;
-    }
-
-    .main-btn {
-      width: 100%;
-      height: 54px;
-      border-radius: 14px;
-      border: none;
-      background: #111;
-      color: white;
-      font-size: 15px;
-      font-weight: 700;
-      margin-bottom: 12px;
-      transition: .2s;
-    }
-
-    .main-btn:hover {
-      transform: translateY(-2px);
-      opacity: .92;
-    }
-
-    .main-btn.secondary {
-      background: white;
-      color: #111;
-      border: 1px solid #dedede;
-    }
-
-    .stats {
-      width: 100%;
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 28px;
-    }
-
-    .stat {
-      background: rgba(255,255,255,.85);
-      border: 1px solid #e7e7e7;
-      border-radius: 14px;
-      padding: 16px 5px;
-    }
-
-    .stat strong {
-      display: block;
-      font-size: 18px;
-      margin-bottom: 5px;
-    }
-
-    .stat span {
-      font-size: 10px;
-      color: #858585;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-    }
-
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    .header {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      padding: 8px 0 25px;
-    }
-
-    .header h2 {
-      font-size: 24px;
-      letter-spacing: -.5px;
-    }
-
-    .back {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      border: 1px solid #ddd;
-      background: white;
-      font-size: 20px;
-      color: #111;
-    }
-
-
-    /* =========================
-       ACCOUNT TYPE
-    ========================= */
-
-    .account-intro {
-      color: #777;
-      font-size: 14px;
-      line-height: 1.6;
-      margin-bottom: 25px;
-    }
-
-    .account-card {
-      background: white;
-      border: 1px solid #e3e3e3;
-      border-radius: 18px;
-      padding: 25px 20px;
-      margin-bottom: 15px;
-      cursor: pointer;
-      transition: .2s;
-    }
-
-    .account-card:hover {
-      transform: translateY(-3px);
-      border-color: #111;
-      box-shadow: 0 10px 25px rgba(0,0,0,.07);
-    }
-
-    .account-card h3 {
-      font-size: 18px;
-      margin-bottom: 7px;
-    }
-
-    .account-card p {
-      color: #777;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-
-    /* =========================
-       FORMS
-    ========================= */
-
-    .form-box {
-      background: white;
-      border: 1px solid #e4e4e4;
-      border-radius: 20px;
-      padding: 22px;
-      box-shadow: 0 10px 35px rgba(0,0,0,.04);
-    }
-
-    .form-group {
-      margin-bottom: 17px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 7px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    input {
-      width: 100%;
-      height: 50px;
-      padding: 0 14px;
-      background: #fafafa;
-      border: 1px solid #dedede;
-      border-radius: 11px;
-      outline: none;
-      font-size: 14px;
-      transition: .2s;
-    }
-
-    input:focus {
-      background: white;
-      border-color: #111;
-    }
-
-    .submit-btn {
-      width: 100%;
-      height: 52px;
-      background: #111;
-      color: white;
-      border: none;
-      border-radius: 12px;
-      font-weight: 700;
-      font-size: 15px;
-      margin-top: 4px;
-    }
-
-    .message {
-      min-height: 20px;
-      text-align: center;
-      margin-top: 13px;
-      font-size: 13px;
-    }
-
-    .link {
-      text-align: center;
-      margin-top: 20px;
-      color: #555;
-      font-size: 13px;
-      cursor: pointer;
-    }
-
-
-    /* =========================
-       DASHBOARDS
-    ========================= */
-
-    .dashboard-title {
-      font-size: 28px;
-      letter-spacing: -.8px;
-      margin-top: 15px;
-    }
-
-    .welcome {
-      color: #777;
-      font-size: 14px;
-      margin-top: 7px;
-      margin-bottom: 25px;
-    }
-
-    .dashboard-card {
-      background: white;
-      border: 1px solid #e5e5e5;
-      border-radius: 17px;
-      padding: 21px;
-      margin-bottom: 13px;
-      transition: .2s;
-    }
-
-    .dashboard-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0,0,0,.05);
-    }
-
-    .dashboard-card h3 {
-      font-size: 16px;
-      margin-bottom: 7px;
-    }
-
-    .dashboard-card p {
-      color: #777;
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .logout {
-      width: 100%;
-      height: 50px;
-      margin-top: 10px;
-      background: white;
-      color: #d22;
-      border: 1px solid #edcccc;
-      border-radius: 12px;
-      font-weight: 700;
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 380px) {
-
-      .brand h1 {
-        font-size: 33px;
-      }
-
-      .container {
-        padding: 20px 15px;
-      }
-
-      .stats {
-        gap: 6px;
-      }
-
-      .stat strong {
-        font-size: 16px;
-      }
-    }
-
-  </style>
 </head>
+
 
 <body>
 
 
   <!-- =========================
-       HOME
+       HOME PAGE
   ========================= -->
 
-  <section id="homePage" class="page active">
+  <section
+    id="homePage"
+    class="page active"
+  >
 
     <div class="container home">
 
@@ -386,6 +38,7 @@
         <div class="brand-line"></div>
 
       </div>
+
 
       <p class="subtitle">
         Algeria's online marketplace
@@ -401,6 +54,7 @@
           Create New Account
         </button>
 
+
         <button
           class="main-btn secondary"
           onclick="showPage('loginPage')"
@@ -414,18 +68,29 @@
       <div class="stats">
 
         <div class="stat">
+
           <strong>0</strong>
+
           <span>Users</span>
+
         </div>
 
+
         <div class="stat">
+
           <strong>0</strong>
+
           <span>Downloads</span>
+
         </div>
 
+
         <div class="stat">
+
           <strong>0</strong>
+
           <span>Products</span>
+
         </div>
 
       </div>
@@ -435,11 +100,15 @@
   </section>
 
 
+
   <!-- =========================
        ACCOUNT TYPE
   ========================= -->
 
-  <section id="accountTypePage" class="page">
+  <section
+    id="accountTypePage"
+    class="page"
+  >
 
     <div class="container">
 
@@ -452,12 +121,19 @@
           ←
         </button>
 
-        <h2>Create Account</h2>
+
+        <h2>
+          Create Account
+        </h2>
 
       </div>
 
+
       <p class="account-intro">
-        Choose the type of account you want to create.
+
+        Choose the type of account
+        you want to create.
+
       </p>
 
 
@@ -466,11 +142,18 @@
         onclick="selectAccountType('seller')"
       >
 
-        <h3>Seller</h3>
+        <h3>
+          Seller
+        </h3>
+
 
         <p>
-          Create a seller account to publish products,
-          manage orders and track your earnings.
+
+          Create a seller account
+          to publish products,
+          manage orders and track
+          your earnings.
+
         </p>
 
       </div>
@@ -481,11 +164,18 @@
         onclick="selectAccountType('buyer')"
       >
 
-        <h3>Buyer</h3>
+        <h3>
+          Buyer
+        </h3>
+
 
         <p>
-          Create a buyer account to discover products,
-          save favorites and place orders.
+
+          Create a buyer account
+          to discover products,
+          save favorites and
+          place orders.
+
         </p>
 
       </div>
@@ -495,11 +185,15 @@
   </section>
 
 
+
   <!-- =========================
-       SIGNUP
+       SIGN UP
   ========================= -->
 
-  <section id="signupPage" class="page">
+  <section
+    id="signupPage"
+    class="page"
+  >
 
     <div class="container">
 
@@ -512,6 +206,7 @@
           ←
         </button>
 
+
         <h2 id="signupTitle">
           Create Account
         </h2>
@@ -523,9 +218,13 @@
 
         <form id="signupForm">
 
+
           <div class="form-group">
 
-            <label>Full Name</label>
+            <label>
+              Full Name
+            </label>
+
 
             <input
               type="text"
@@ -537,9 +236,13 @@
           </div>
 
 
+
           <div class="form-group">
 
-            <label>Username</label>
+            <label>
+              Username
+            </label>
+
 
             <input
               type="text"
@@ -551,9 +254,13 @@
           </div>
 
 
+
           <div class="form-group">
 
-            <label>Email</label>
+            <label>
+              Email
+            </label>
+
 
             <input
               type="email"
@@ -565,9 +272,13 @@
           </div>
 
 
+
           <div class="form-group">
 
-            <label>Password</label>
+            <label>
+              Password
+            </label>
+
 
             <input
               type="password"
@@ -579,9 +290,13 @@
           </div>
 
 
+
           <div class="form-group">
 
-            <label>Confirm Password</label>
+            <label>
+              Confirm Password
+            </label>
+
 
             <input
               type="password"
@@ -591,6 +306,7 @@
             >
 
           </div>
+
 
 
           <button
@@ -606,6 +322,7 @@
             class="message"
           ></div>
 
+
         </form>
 
       </div>
@@ -615,11 +332,15 @@
   </section>
 
 
+
   <!-- =========================
        LOGIN
   ========================= -->
 
-  <section id="loginPage" class="page">
+  <section
+    id="loginPage"
+    class="page"
+  >
 
     <div class="container">
 
@@ -632,7 +353,10 @@
           ←
         </button>
 
-        <h2>Login</h2>
+
+        <h2>
+          Login
+        </h2>
 
       </div>
 
@@ -641,9 +365,13 @@
 
         <form id="loginForm">
 
+
           <div class="form-group">
 
-            <label>Email or Username</label>
+            <label>
+              Email or Username
+            </label>
+
 
             <input
               type="text"
@@ -655,9 +383,13 @@
           </div>
 
 
+
           <div class="form-group">
 
-            <label>Password</label>
+            <label>
+              Password
+            </label>
+
 
             <input
               type="password"
@@ -667,6 +399,7 @@
             >
 
           </div>
+
 
 
           <button
@@ -682,6 +415,7 @@
             class="message"
           ></div>
 
+
         </form>
 
 
@@ -689,7 +423,10 @@
           class="link"
           onclick="showPage('accountTypePage')"
         >
-          Don't have an account? Create one
+
+          Don't have an account?
+          Create one
+
         </div>
 
       </div>
@@ -699,17 +436,23 @@
   </section>
 
 
+
   <!-- =========================
-       SELLER
+       SELLER DASHBOARD
   ========================= -->
 
-  <section id="sellerPage" class="page">
+  <section
+    id="sellerPage"
+    class="page"
+  >
 
     <div class="container">
+
 
       <h1 class="dashboard-title">
         Seller Dashboard
       </h1>
+
 
       <p
         class="welcome"
@@ -717,9 +460,13 @@
       ></p>
 
 
+
       <div class="dashboard-card">
 
-        <h3>Products</h3>
+        <h3>
+          Products
+        </h3>
+
 
         <p>
           Add and manage your products.
@@ -728,9 +475,13 @@
       </div>
 
 
+
       <div class="dashboard-card">
 
-        <h3>Orders</h3>
+        <h3>
+          Orders
+        </h3>
+
 
         <p>
           Monitor your orders and returns.
@@ -739,9 +490,13 @@
       </div>
 
 
+
       <div class="dashboard-card">
 
-        <h3>Earnings</h3>
+        <h3>
+          Earnings
+        </h3>
+
 
         <p>
           View your daily and monthly earnings.
@@ -750,16 +505,21 @@
       </div>
 
 
+
       <div class="dashboard-card">
 
-        <h3>Settings</h3>
+        <h3>
+          Settings
+        </h3>
+
 
         <p>
-          Manage payment methods, delivery prices
-          and account settings.
+          Manage payment methods,
+          delivery prices and account settings.
         </p>
 
       </div>
+
 
 
       <button
@@ -769,459 +529,465 @@
         Logout
       </button>
 
+
     </div>
 
   </section>
+
 
 
   <!-- =========================
-       BUYER
+       BUYER APPLICATION
   ========================= -->
 
-  <section id="buyerPage" class="page">
+  <section
+    id="buyerPage"
+    class="page"
+  >
 
-    <div class="container">
-
-      <h1 class="dashboard-title">
-        Marketplace Dz
-      </h1>
-
-      <p
-        class="welcome"
-        id="buyerWelcome"
-      ></p>
+    <div class="buyer-app">
 
 
-      <div class="dashboard-card">
+      <div class="container">
 
-        <h3>Home</h3>
 
-        <p>
-          Products published by sellers will appear here.
-        </p>
+        <div class="buyer-header">
+
+          <h1>
+            Marketplace Dz
+          </h1>
+
+
+          <p id="buyerWelcome">
+          </p>
+
+        </div>
+
+
+
+        <!-- HOME -->
+
+        <div
+          id="buyerHome"
+          class="buyer-section"
+        >
+
+          <div class="search-box">
+
+            <input
+              type="text"
+              id="productSearch"
+              placeholder="Search products..."
+            >
+
+          </div>
+
+
+          <!--
+            IMPORTANT:
+            Products are intentionally empty.
+            Sellers will publish them later.
+          -->
+
+          <div
+            id="productsArea"
+            class="products-area"
+          >
+
+            <div class="empty-products">
+
+              <h3>
+                No products yet
+              </h3>
+
+
+              <p>
+                Products published by sellers
+                will appear here.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- FAVORITES -->
+
+        <div
+          id="buyerFavorites"
+          class="buyer-section"
+          style="display:none;"
+        >
+
+          <h2>
+            Favorites
+          </h2>
+
+
+          <div
+            id="favoritesArea"
+            class="products-area"
+          >
+
+            <div class="empty-products">
+
+              <h3>
+                No favorites yet
+              </h3>
+
+
+              <p>
+                Products you save will appear here.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- CATEGORIES -->
+
+        <div
+          id="buyerCategories"
+          class="buyer-section"
+          style="display:none;"
+        >
+
+          <h2>
+            Categories
+          </h2>
+
+
+          <div class="category-grid">
+
+
+            <div class="category-item">
+              Accessories
+            </div>
+
+
+            <div class="category-item">
+              Cars & Motorcycles
+            </div>
+
+
+            <div class="category-item">
+              Computers
+            </div>
+
+
+            <div class="category-item">
+              Kitchen Tools
+            </div>
+
+
+            <div class="category-item">
+              Electronics
+            </div>
+
+
+            <div class="category-item">
+              Home Tools
+            </div>
+
+
+            <div class="category-item">
+              Handicrafts
+            </div>
+
+
+            <div class="category-item">
+              Decoration
+            </div>
+
+
+            <div class="category-item">
+              Bags & Fashion
+            </div>
+
+
+            <div class="category-item">
+              Beauty & Care
+            </div>
+
+
+            <div class="category-item">
+              Sports
+            </div>
+
+
+            <div class="category-item">
+              Camping & Hiking
+            </div>
+
+
+            <div class="category-item">
+              Toys & Games
+            </div>
+
+
+            <div class="category-item">
+              School Supplies
+            </div>
+
+
+            <div class="category-item">
+              Summer Products
+            </div>
+
+
+            <div class="category-item">
+              Winter Products
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+        <!-- CART -->
+
+        <div
+          id="buyerCart"
+          class="buyer-section"
+          style="display:none;"
+        >
+
+          <h2>
+            Cart
+          </h2>
+
+
+          <div
+            id="cartArea"
+            class="products-area"
+          >
+
+            <div class="empty-products">
+
+              <h3>
+                Your cart is empty
+              </h3>
+
+
+              <p>
+                Products you choose to order
+                will appear here.
+              </p>
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+
+        <!-- MORE -->
+
+        <div
+          id="buyerMore"
+          class="buyer-section"
+          style="display:none;"
+        >
+
+          <h2>
+            More
+          </h2>
+
+
+          <div class="dashboard-card">
+
+            <h3>
+              Profile
+            </h3>
+
+
+            <p>
+              Manage your personal information.
+            </p>
+
+          </div>
+
+
+          <div class="dashboard-card">
+
+            <h3>
+              Orders
+            </h3>
+
+
+            <p>
+              View your previous and current orders.
+            </p>
+
+          </div>
+
+
+          <div class="dashboard-card">
+
+            <h3>
+              Delivery Prices
+            </h3>
+
+
+            <p>
+              View delivery prices for all wilayas.
+            </p>
+
+          </div>
+
+
+          <div class="dashboard-card">
+
+            <h3>
+              Help & Support
+            </h3>
+
+
+            <p>
+              Contact Marketplace Dz support.
+            </p>
+
+          </div>
+
+
+          <div class="dashboard-card">
+
+            <h3>
+              Dark Mode
+            </h3>
+
+
+            <button
+              class="main-btn secondary"
+              onclick="toggleDarkMode()"
+            >
+              Change Appearance
+            </button>
+
+          </div>
+
+
+          <button
+            class="logout"
+            onclick="logout()"
+          >
+            Logout
+          </button>
+
+        </div>
+
 
       </div>
 
 
-      <div class="dashboard-card">
 
-        <h3>Favorites</h3>
+      <!-- =========================
+           BUYER BOTTOM NAVIGATION
+      ========================= -->
 
-        <p>
-          Your saved products will appear here.
-        </p>
-
-      </div>
+      <nav class="bottom-nav">
 
 
-      <div class="dashboard-card">
+        <button
+          class="nav-item active"
+          onclick="buyerTab('home')"
+        >
 
-        <h3>Categories</h3>
+          <span>
+            Home
+          </span>
 
-        <p>
-          Explore Marketplace Dz categories.
-        </p>
+          <div class="nav-line"></div>
 
-      </div>
-
-
-      <div class="dashboard-card">
-
-        <h3>Cart</h3>
-
-        <p>
-          Products you choose to order will appear here.
-        </p>
-
-      </div>
+        </button>
 
 
-      <div class="dashboard-card">
 
-        <h3>More</h3>
+        <button
+          class="nav-item"
+          onclick="buyerTab('favorites')"
+        >
 
-        <p>
-          Profile, orders, delivery prices,
-          help and settings.
-        </p>
+          <span>
+            Favorites
+          </span>
 
-      </div>
+          <div class="nav-line"></div>
+
+        </button>
 
 
-      <button
-        class="logout"
-        onclick="logout()"
-      >
-        Logout
-      </button>
+
+        <button
+          class="nav-item"
+          onclick="buyerTab('categories')"
+        >
+
+          <span>
+            Categories
+          </span>
+
+          <div class="nav-line"></div>
+
+        </button>
+
+
+
+        <button
+          class="nav-item"
+          onclick="buyerTab('cart')"
+        >
+
+          <span>
+            Cart
+          </span>
+
+          <div class="nav-line"></div>
+
+        </button>
+
+
+
+        <button
+          class="nav-item"
+          onclick="buyerTab('more')"
+        >
+
+          <span>
+            More
+          </span>
+
+          <div class="nav-line"></div>
+
+        </button>
+
+
+      </nav>
+
 
     </div>
 
   </section>
+
 
 
   <!-- =========================
        JAVASCRIPT
-       SAME FUNCTIONALITY
   ========================= -->
-
-  <script>
-
-    let selectedAccountType = "";
-
-
-    function showPage(pageId) {
-
-      const pages =
-        document.querySelectorAll(".page");
-
-      pages.forEach(page => {
-        page.classList.remove("active");
-      });
-
-      document
-        .getElementById(pageId)
-        .classList.add("active");
-
-      window.scrollTo(0, 0);
-    }
-
-
-    function selectAccountType(type) {
-
-      selectedAccountType = type;
-
-      if (type === "seller") {
-
-        document
-          .getElementById("signupTitle")
-          .textContent =
-          "Create Seller Account";
-
-      } else {
-
-        document
-          .getElementById("signupTitle")
-          .textContent =
-          "Create Buyer Account";
-      }
-
-      showPage("signupPage");
-    }
-
-
-    document
-      .getElementById("signupForm")
-      .addEventListener(
-        "submit",
-        function(event) {
-
-          event.preventDefault();
-
-          const name =
-            document
-              .getElementById("signupName")
-              .value.trim();
-
-          const username =
-            document
-              .getElementById("signupUsername")
-              .value.trim();
-
-          const email =
-            document
-              .getElementById("signupEmail")
-              .value.trim();
-
-          const password =
-            document
-              .getElementById("signupPassword")
-              .value;
-
-          const confirmPassword =
-            document
-              .getElementById(
-                "signupConfirmPassword"
-              )
-              .value;
-
-          const message =
-            document.getElementById(
-              "signupMessage"
-            );
-
-
-          if (password !== confirmPassword) {
-
-            message.textContent =
-              "Passwords do not match.";
-
-            message.style.color = "red";
-
-            return;
-          }
-
-
-          if (password.length < 6) {
-
-            message.textContent =
-              "Password must contain at least 6 characters.";
-
-            message.style.color = "red";
-
-            return;
-          }
-
-
-          const existingUsers =
-            JSON.parse(
-              localStorage.getItem(
-                "marketplaceUsers"
-              ) || "[]"
-            );
-
-
-          if (
-            existingUsers.some(
-              user =>
-                user.username.toLowerCase() ===
-                username.toLowerCase()
-            )
-          ) {
-
-            message.textContent =
-              "Username already exists.";
-
-            message.style.color = "red";
-
-            return;
-          }
-
-
-          if (
-            existingUsers.some(
-              user =>
-                user.email.toLowerCase() ===
-                email.toLowerCase()
-            )
-          ) {
-
-            message.textContent =
-              "Email already exists.";
-
-            message.style.color = "red";
-
-            return;
-          }
-
-
-          const newUser = {
-
-            id: Date.now(),
-
-            name,
-
-            username,
-
-            email,
-
-            password,
-
-            type: selectedAccountType
-
-          };
-
-
-          existingUsers.push(newUser);
-
-
-          localStorage.setItem(
-            "marketplaceUsers",
-            JSON.stringify(existingUsers)
-          );
-
-
-          message.textContent =
-            "Account created successfully.";
-
-          message.style.color = "green";
-
-
-          setTimeout(() => {
-
-            document
-              .getElementById("signupForm")
-              .reset();
-
-            showPage("loginPage");
-
-          }, 1000);
-
-        }
-      );
-
-
-    document
-      .getElementById("loginForm")
-      .addEventListener(
-        "submit",
-        function(event) {
-
-          event.preventDefault();
-
-          const identifier =
-            document
-              .getElementById(
-                "loginIdentifier"
-              )
-              .value.trim();
-
-          const password =
-            document
-              .getElementById(
-                "loginPassword"
-              )
-              .value;
-
-
-          const message =
-            document.getElementById(
-              "loginMessage"
-            );
-
-
-          const users =
-            JSON.parse(
-              localStorage.getItem(
-                "marketplaceUsers"
-              ) || "[]"
-            );
-
-
-          const user =
-            users.find(u =>
-
-              (
-                u.email.toLowerCase() ===
-                identifier.toLowerCase()
-
-                ||
-
-                u.username.toLowerCase() ===
-                identifier.toLowerCase()
-              )
-
-              &&
-
-              u.password === password
-
-            );
-
-
-          if (!user) {
-
-            message.textContent =
-              "Invalid username/email or password.";
-
-            message.style.color = "red";
-
-            return;
-          }
-
-
-          localStorage.setItem(
-            "marketplaceCurrentUser",
-            JSON.stringify(user)
-          );
-
-
-          if (user.type === "seller") {
-
-            document
-              .getElementById(
-                "sellerWelcome"
-              )
-              .textContent =
-              "Welcome, " + user.name;
-
-            showPage("sellerPage");
-
-          } else {
-
-            document
-              .getElementById(
-                "buyerWelcome"
-              )
-              .textContent =
-              "Welcome, " + user.name;
-
-            showPage("buyerPage");
-
-          }
-
-        }
-      );
-
-
-    function logout() {
-
-      localStorage.removeItem(
-        "marketplaceCurrentUser"
-      );
-
-      document
-        .getElementById("loginForm")
-        .reset();
-
-      showPage("homePage");
-    }
-
-
-    window.addEventListener(
-      "load",
-      function() {
-
-        const currentUser =
-          JSON.parse(
-            localStorage.getItem(
-              "marketplaceCurrentUser"
-            )
-          );
-
-
-        if (!currentUser) return;
-
-
-        if (currentUser.type === "seller") {
-
-          document
-            .getElementById(
-              "sellerWelcome"
-            )
-            .textContent =
-            "Welcome back, " +
-            currentUser.name;
-
-          showPage("sellerPage");
-
-        } else {
-
-          document
-            .getElementById(
-              "buyerWelcome"
-            )
-            .textContent =
-            "Welcome back, " +
-            currentUser.name;
-
-          showPage("buyerPage");
-
-        }
-
-      }
-    );
 
   <script src="script.js"></script>
 
+
 </body>
-        </html>
+
+              </html>
