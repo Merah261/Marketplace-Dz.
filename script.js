@@ -12,13 +12,15 @@ let selectedAccountType = "";
 
 function showPage(pageId) {
 
-  const pages = document.querySelectorAll(".page");
+  const pages =
+    document.querySelectorAll(".page");
 
   pages.forEach(page => {
     page.classList.remove("active");
   });
 
-  const selectedPage = document.getElementById(pageId);
+  const selectedPage =
+    document.getElementById(pageId);
 
   if (selectedPage) {
     selectedPage.classList.add("active");
@@ -39,15 +41,19 @@ function selectAccountType(type) {
   const title =
     document.getElementById("signupTitle");
 
-  if (type === "seller") {
+  if (title) {
 
-    title.textContent =
-      "Create Seller Account";
+    if (type === "seller") {
 
-  } else {
+      title.textContent =
+        "Create Seller Account";
 
-    title.textContent =
-      "Create Buyer Account";
+    } else {
+
+      title.textContent =
+        "Create Buyer Account";
+    }
+
   }
 
   showPage("signupPage");
@@ -69,25 +75,30 @@ if (signupForm) {
 
       event.preventDefault();
 
+
       const name =
         document
           .getElementById("signupName")
           .value.trim();
+
 
       const username =
         document
           .getElementById("signupUsername")
           .value.trim();
 
+
       const email =
         document
           .getElementById("signupEmail")
           .value.trim();
 
+
       const password =
         document
           .getElementById("signupPassword")
           .value;
+
 
       const confirmPassword =
         document
@@ -95,6 +106,7 @@ if (signupForm) {
             "signupConfirmPassword"
           )
           .value;
+
 
       const message =
         document.getElementById(
@@ -244,6 +256,7 @@ if (loginForm) {
 
       event.preventDefault();
 
+
       const identifier =
         document
           .getElementById(
@@ -251,12 +264,14 @@ if (loginForm) {
           )
           .value.trim();
 
+
       const password =
         document
           .getElementById(
             "loginPassword"
           )
           .value;
+
 
       const message =
         document.getElementById(
@@ -279,9 +294,11 @@ if (loginForm) {
             user.email.toLowerCase() ===
             identifier.toLowerCase();
 
+
           const usernameMatch =
             user.username.toLowerCase() ===
             identifier.toLowerCase();
+
 
           return (
             (emailMatch || usernameMatch) &&
@@ -323,11 +340,14 @@ if (loginForm) {
               "sellerWelcome"
             );
 
+
           if (sellerWelcome) {
 
             sellerWelcome.textContent =
               "Welcome, " + user.name;
+
           }
+
 
           showPage("sellerPage");
 
@@ -338,11 +358,14 @@ if (loginForm) {
               "buyerWelcome"
             );
 
+
           if (buyerWelcome) {
 
             buyerWelcome.textContent =
               "Welcome, " + user.name;
+
           }
+
 
           showPage("buyerPage");
 
@@ -357,6 +380,153 @@ if (loginForm) {
 
 
 /* =========================================
+   BUYER NAVIGATION
+========================================= */
+
+function buyerTab(tab) {
+
+  const sections = {
+
+    home:
+      document.getElementById(
+        "buyerHome"
+      ),
+
+    favorites:
+      document.getElementById(
+        "buyerFavorites"
+      ),
+
+    categories:
+      document.getElementById(
+        "buyerCategories"
+      ),
+
+    cart:
+      document.getElementById(
+        "buyerCart"
+      ),
+
+    more:
+      document.getElementById(
+        "buyerMore"
+      )
+
+  };
+
+
+  Object.values(sections).forEach(
+    section => {
+
+      if (section) {
+
+        section.style.display =
+          "none";
+
+      }
+
+    }
+  );
+
+
+  if (sections[tab]) {
+
+    sections[tab].style.display =
+      "block";
+
+  }
+
+
+  const buttons =
+    document.querySelectorAll(
+      ".bottom-nav .nav-item"
+    );
+
+
+  buttons.forEach(button => {
+
+    button.classList.remove(
+      "active"
+    );
+
+  });
+
+
+  const tabOrder = [
+    "home",
+    "favorites",
+    "categories",
+    "cart",
+    "more"
+  ];
+
+
+  const index =
+    tabOrder.indexOf(tab);
+
+
+  if (index !== -1 && buttons[index]) {
+
+    buttons[index].classList.add(
+      "active"
+    );
+
+  }
+
+
+  window.scrollTo(0, 0);
+}
+
+
+/* =========================================
+   DARK MODE
+========================================= */
+
+function toggleDarkMode() {
+
+  document.body.classList.toggle(
+    "dark"
+  );
+
+
+  const enabled =
+    document.body.classList.contains(
+      "dark"
+    );
+
+
+  localStorage.setItem(
+    "marketplaceDarkMode",
+    enabled ? "true" : "false"
+  );
+
+}
+
+
+/* =========================================
+   LOAD DARK MODE
+========================================= */
+
+function loadDarkMode() {
+
+  const darkMode =
+    localStorage.getItem(
+      "marketplaceDarkMode"
+    );
+
+
+  if (darkMode === "true") {
+
+    document.body.classList.add(
+      "dark"
+    );
+
+  }
+
+}
+
+
+/* =========================================
    LOGOUT
 ========================================= */
 
@@ -366,14 +536,19 @@ function logout() {
     "marketplaceCurrentUser"
   );
 
+
   const loginForm =
     document.getElementById(
       "loginForm"
     );
 
+
   if (loginForm) {
+
     loginForm.reset();
+
   }
+
 
   showPage("homePage");
 }
@@ -386,6 +561,9 @@ function logout() {
 window.addEventListener(
   "load",
   function() {
+
+    loadDarkMode();
+
 
     const currentUser =
       JSON.parse(
@@ -410,30 +588,40 @@ window.addEventListener(
           "sellerWelcome"
         );
 
+
       if (welcome) {
 
         welcome.textContent =
           "Welcome back, " +
           currentUser.name;
+
       }
+
 
       showPage("sellerPage");
 
+
     } else {
+
 
       const welcome =
         document.getElementById(
           "buyerWelcome"
         );
 
+
       if (welcome) {
 
         welcome.textContent =
           "Welcome back, " +
           currentUser.name;
+
       }
 
+
       showPage("buyerPage");
+
+      buyerTab("home");
 
     }
 
